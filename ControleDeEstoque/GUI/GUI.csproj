@@ -45,23 +45,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="frmModeloDeFormularioDeCadastro.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmModeloDeFormularioDeCadastro.Designer.cs">
-      <DependentUpon>frmModeloDeFormularioDeCadastro.cs</DependentUpon>
-    </Compile>
-    <Compile Include="frmPrincipal.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmPrincipal.Designer.cs">
-      <DependentUpon>frmPrincipal.cs</DependentUpon>
-    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="frmPrincipal.resx">
-      <DependentUpon>frmPrincipal.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -70,6 +55,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -97,6 +83,36 @@
       <Project>{814583a1-aff0-4a41-b47a-a78523c92b70}</Project>
       <Name>Modelo</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Alterar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Avançar1.fw.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Cancelar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Excluir.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\localizar.fw.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Novo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\primeiro.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Salvar1.fw.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Ultimo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Voltar1.fw.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
