@@ -34,7 +34,7 @@ namespace DAL
             SqlCommand cmd = new SqlCommand();
             cmd.Connection = conexao.ObjetoConexao;
 
-            cmd.CommandText = "update categoria set cat_nome = @nome; where cat_cod = @codigo";
+            cmd.CommandText = "update categoria set cat_nome = @nome where cat_cod = @codigo";
             cmd.Parameters.AddWithValue("@nome", modelo.CatNome);
             cmd.Parameters.AddWithValue("@codigo", modelo.CatCod);
             conexao.Connectar();
