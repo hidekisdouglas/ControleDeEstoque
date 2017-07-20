@@ -37,24 +37,31 @@ namespace GUI
 
         private void btSalvar_Click(object sender, EventArgs e)
         {
-            //leitura de dados
-            ModeloCategoria modelo = new ModeloCategoria();
-            modelo.CatNome = txtNome.Text;
-            // obj para gravar os dados no banco
-            DALConexao cx = new DALConexao(DadosDaConexao.StringDeConexao);
-            BLLCategoria bll = new BLLCategoria(cx);
+            try
+            {
+                //leitura de dados
+                ModeloCategoria modelo = new ModeloCategoria();
+                modelo.CatNome = txtNome.Text;
+                // obj para gravar os dados no banco
+                DALConexao cx = new DALConexao(DadosDaConexao.StringDeConexao);
+                BLLCategoria bll = new BLLCategoria(cx);
 
-            if (this.operacao == "inserir")
-            {
-                //cadastrar uma categoria
-                bll.Incluir(modelo);
-                
+                if (this.operacao == "inserir")
+                {
+                    //cadastrar uma categoria
+                    bll.Incluir(modelo);
+
+                }
+                else
+                {
+                    //alterar uma categoria
+                    modelo.CatCod = Convert.ToInt32(txtCodigo.Text);
+                    bll.Alterar(modelo);
+                }
             }
-            else
+            catch(Exception erro)
             {
-                //alterar uma categoria
-                modelo.CatCod = Convert.ToInt32(txtCodigo.Text);
-                bll.Alterar(modelo);
+                MessageBox.Show(erro.Message);
             }
         }
     }
