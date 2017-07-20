@@ -8,6 +8,19 @@ namespace Modelo
 {
     public class ModeloSubCategoria
     {
+        public ModeloSubCategoria()
+        {
+            this.CatCod = 0;
+            this.ScatCod = 0;
+            this.ScatNome = "";
+        }
+        public ModeloSubCategoria(int scatcod, int catcod, string scatnome)
+        {
+            this.CatCod = catcod;
+            this.ScatCod = scatcod;
+            this.ScatNome = scatnome;
+        }
+
         private int scat_cod;
         public int ScatCod
         {
