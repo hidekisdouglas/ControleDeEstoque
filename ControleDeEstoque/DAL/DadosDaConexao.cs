@@ -12,7 +12,7 @@ namespace DAL
         {
             get
             {
-                return "Data Source=DOUGLAS-PC\\SQLEXPRESS;Initial Catalog=db_Agenda;Integrated Security=True";
+                return "Data Source=DOUGLAS-PC\\SQLEXPRESS;Initial Catalog=ControleDeEstoque;Integrated Security=True";
             }
         }
     }

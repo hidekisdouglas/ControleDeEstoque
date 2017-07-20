@@ -23,7 +23,7 @@ namespace DAL
             SqlCommand cmd = new SqlCommand();
             cmd.Connection = conexao.ObjetoConexao;
             
-            cmd.CommandText = "insert into categoria(cat_nome) values (@nome); select @@IDENTITY";
+            cmd.CommandText = "insert into categoria(cat_nome) values (@nome); select @@IDENTITY;";
             cmd.Parameters.AddWithValue("@nome", modelo.CatNome);
             conexao.Connectar();
             modelo.CatCod = Convert.ToInt32(cmd.ExecuteScalar());

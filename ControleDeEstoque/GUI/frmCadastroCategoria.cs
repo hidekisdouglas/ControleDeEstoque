@@ -50,6 +50,7 @@ namespace GUI
                 {
                     //cadastrar uma categoria
                     bll.Incluir(modelo);
+                    MessageBox.Show("Cadastro efetuado com sucesso! \\n O código da categoria é: " + modelo.CatCod.ToString());
 
                 }
                 else
@@ -57,7 +58,10 @@ namespace GUI
                     //alterar uma categoria
                     modelo.CatCod = Convert.ToInt32(txtCodigo.Text);
                     bll.Alterar(modelo);
+                    MessageBox.Show("Cadastro atualizado com sucesso!");
                 }
+                this.limpaTela();
+                this.alteraBotoes(1);
             }
             catch(Exception erro)
             {
