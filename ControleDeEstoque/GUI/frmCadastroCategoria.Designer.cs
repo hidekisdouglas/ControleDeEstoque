@@ -109,6 +109,7 @@
             this.ClientSize = new System.Drawing.Size(784, 561);
             this.Name = "frmCadastroCategoria";
             this.Text = "Cadastro de cadastro";
+            this.Load += new System.EventHandler(this.frmCadastroCategoria_Load);
             this.pnDados.ResumeLayout(false);
             this.pnDados.PerformLayout();
             this.pnBotoes.ResumeLayout(false);

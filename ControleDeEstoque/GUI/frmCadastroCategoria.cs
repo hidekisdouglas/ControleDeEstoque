@@ -50,7 +50,7 @@ namespace GUI
                 {
                     //cadastrar uma categoria
                     bll.Incluir(modelo);
-                    MessageBox.Show("Cadastro efetuado com sucesso! \\n O código da categoria é: " + modelo.CatCod.ToString());
+                    MessageBox.Show("Cadastro efetuado com sucesso! O código da categoria é: " + modelo.CatCod.ToString());
 
                 }
                 else
@@ -67,6 +67,11 @@ namespace GUI
             {
                 MessageBox.Show(erro.Message);
             }
+        }
+
+        private void frmCadastroCategoria_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
