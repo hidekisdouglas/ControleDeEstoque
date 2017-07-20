@@ -45,6 +45,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="frmCadastroCategoria.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCadastroCategoria.Designer.cs">
+      <DependentUpon>frmCadastroCategoria.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmModeloDeFormularioDeCadastro.cs">
       <SubType>Form</SubType>
     </Compile>
