@@ -68,10 +68,35 @@ namespace GUI
                 MessageBox.Show(erro.Message);
             }
         }
-
-        private void frmCadastroCategoria_Load(object sender, EventArgs e)
+      
+        private void btAlterar_Click(object sender, EventArgs e)
         {
+            this.operacao = "alterar";
+            this.alteraBotoes(2);
+        }
 
+        private void btExcluir_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                //leitura de dados
+                DialogResult d = MessageBox.Show("Deseja excluir a categoria?", "Aviso", MessageBoxButtons.YesNo);
+
+                if (this.operacao == "inserir")
+                {
+                    // obj para gravar os dados no banco
+                    DALConexao cx = new DALConexao(DadosDaConexao.StringDeConexao);
+                    BLLCategoria bll = new BLLCategoria(cx);
+                    bll.Excluir(Convert.ToInt32(txtCodigo.Text));
+                    this.limpaTela();
+                    this.alteraBotoes(1);
+                }
+            }
+            catch 
+            {
+                MessageBox.Show("Não é possível excluir a categoria! \n A categoria está sendo utilizada em outro local.");
+                this.alteraBotoes(3);
+            }
         }
     }
 }
