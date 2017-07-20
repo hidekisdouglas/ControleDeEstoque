@@ -61,6 +61,7 @@
             // btLocalizar
             // 
             this.btLocalizar.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
+            this.btLocalizar.Click += new System.EventHandler(this.btLocalizar_Click);
             // 
             // btInserir
             // 
