@@ -160,13 +160,13 @@
 
         #endregion
 
-        private System.Windows.Forms.Panel pnDados;
-        private System.Windows.Forms.Panel pnBotoes;
-        private System.Windows.Forms.Button btSalvar;
-        private System.Windows.Forms.Button btExcluir;
-        private System.Windows.Forms.Button btAlterar;
-        private System.Windows.Forms.Button btLocalizar;
-        private System.Windows.Forms.Button btInserir;
-        private System.Windows.Forms.Button btCancelar;
+        protected System.Windows.Forms.Panel pnDados;
+        protected System.Windows.Forms.Panel pnBotoes;
+        protected System.Windows.Forms.Button btSalvar;
+        protected System.Windows.Forms.Button btExcluir;
+        protected System.Windows.Forms.Button btAlterar;
+        protected System.Windows.Forms.Button btLocalizar;
+        protected System.Windows.Forms.Button btInserir;
+        protected System.Windows.Forms.Button btCancelar;
     }
 }
