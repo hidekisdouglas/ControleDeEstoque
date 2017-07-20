@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace DAL
 {
-    class DALCategoria
+    public class DALCategoria
     {
         private DALConexao conexao;
         //Construtor
