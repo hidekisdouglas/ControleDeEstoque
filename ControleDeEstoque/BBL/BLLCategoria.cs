@@ -7,9 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BBL
+namespace BLL
 {
-    class BLLCategoria
+    public class BLLCategoria
     {
         private DALConexao conexao;
 
