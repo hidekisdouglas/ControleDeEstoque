@@ -1,4 +1,6 @@
-﻿using System;
+﻿using BLL;
+using DAL;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +17,13 @@ namespace GUI
         public frmConsultaCategoria()
         {
             InitializeComponent();
+        }
+
+        private void btLocalizar_Click(object sender, EventArgs e)
+        {
+            DALConexao cx = new DALConexao(DadosDaConexao.StringDeConexao);
+            BLLCategoria bll = new BLLCategoria(cx);
+            dgvDados.DataSource = bll.Localizar(txtValor.Text);
         }
     }
 }

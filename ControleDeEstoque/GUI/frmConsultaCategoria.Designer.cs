@@ -59,6 +59,7 @@
             this.btLocalizar.TabIndex = 2;
             this.btLocalizar.Text = "Localizar";
             this.btLocalizar.UseVisualStyleBackColor = true;
+            this.btLocalizar.Click += new System.EventHandler(this.btLocalizar_Click);
             // 
             // dgvDados
             // 
