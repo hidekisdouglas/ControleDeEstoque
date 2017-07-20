@@ -28,7 +28,42 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.pnBotoes.SuspendLayout();
+            this.SuspendLayout();
+            // 
+            // btSalvar
+            // 
+            this.btSalvar.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
+            // 
+            // btExcluir
+            // 
+            this.btExcluir.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
+            // 
+            // btAlterar
+            // 
+            this.btAlterar.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
+            // 
+            // btLocalizar
+            // 
+            this.btLocalizar.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
+            // 
+            // btInserir
+            // 
+            this.btInserir.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
+            // 
+            // btCancelar
+            // 
+            this.btCancelar.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
+            // 
+            // frmCadastroCategoria
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.ClientSize = new System.Drawing.Size(784, 561);
+            this.Name = "frmCadastroCategoria";
+            this.Text = "Cadastro de cadastro";
+            this.pnBotoes.ResumeLayout(false);
+            this.ResumeLayout(false);
+
         }
 
         #endregion

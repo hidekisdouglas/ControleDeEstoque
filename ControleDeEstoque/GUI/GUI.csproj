@@ -65,6 +65,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="frmCadastroCategoria.resx">
+      <DependentUpon>frmCadastroCategoria.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmModeloDeFormularioDeCadastro.resx">
       <DependentUpon>frmModeloDeFormularioDeCadastro.cs</DependentUpon>
     </EmbeddedResource>

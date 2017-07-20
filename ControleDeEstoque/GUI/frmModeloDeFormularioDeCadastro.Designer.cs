@@ -153,6 +153,7 @@
             this.Name = "frmModeloDeFormularioDeCadastro";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Modelo de formulario de cadastro";
+            this.Load += new System.EventHandler(this.frmModeloDeFormularioDeCadastro_Load);
             this.pnBotoes.ResumeLayout(false);
             this.ResumeLayout(false);
 

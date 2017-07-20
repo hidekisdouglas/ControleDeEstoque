@@ -53,6 +53,9 @@ namespace GUI
             }
         }
 
-
+        private void frmModeloDeFormularioDeCadastro_Load(object sender, EventArgs e)
+        {
+            this.alteraBotoes(1);
+        }
     }
 }
