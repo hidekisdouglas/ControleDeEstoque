@@ -14,6 +14,8 @@ namespace GUI
 {
     public partial class frmConsultaCategoria : Form
     {
+        public int codigo = 0;
+        
         public frmConsultaCategoria()
         {
             InitializeComponent();
@@ -24,6 +26,27 @@ namespace GUI
             DALConexao cx = new DALConexao(DadosDaConexao.StringDeConexao);
             BLLCategoria bll = new BLLCategoria(cx);
             dgvDados.DataSource = bll.Localizar(txtValor.Text);
+        }
+
+        private void frmConsultaCategoria_Load(object sender, EventArgs e)
+        {
+            //Carregar todos as categorias ao abrir o formulario de consulta
+            btLocalizar_Click(sender, e);
+            //troca o header da tabela
+            dgvDados.Columns[0].HeaderText = "Código";
+            dgvDados.Columns[0].Width = 70;
+            dgvDados.Columns[1].HeaderText = "Categoria";
+            dgvDados.Columns[1].Width = 630;
+        }
+
+        private void dgvDados_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            //Seleção de toda a linha da tabela
+            if (e.RowIndex >= 0)
+            {
+                this.codigo = Convert.ToInt32(dgvDados.Rows[e.RowIndex].Cells[0].Value);
+                this.Close();
+            }
         }
     }
 }

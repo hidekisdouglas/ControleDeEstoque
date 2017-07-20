@@ -70,8 +70,9 @@
             this.dgvDados.Name = "dgvDados";
             this.dgvDados.ReadOnly = true;
             this.dgvDados.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvDados.Size = new System.Drawing.Size(759, 430);
+            this.dgvDados.Size = new System.Drawing.Size(760, 430);
             this.dgvDados.TabIndex = 3;
+            this.dgvDados.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDados_CellDoubleClick);
             // 
             // frmConsultaCategoria
             // 
@@ -85,6 +86,7 @@
             this.Name = "frmConsultaCategoria";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Consulta categoria";
+            this.Load += new System.EventHandler(this.frmConsultaCategoria_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvDados)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
