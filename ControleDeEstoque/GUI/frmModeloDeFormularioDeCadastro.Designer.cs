@@ -31,7 +31,7 @@
             this.pnDados = new System.Windows.Forms.Panel();
             this.pnBotoes = new System.Windows.Forms.Panel();
             this.btInserir = new System.Windows.Forms.Button();
-            this.Localizar = new System.Windows.Forms.Button();
+            this.btLocalizar = new System.Windows.Forms.Button();
             this.btAlterar = new System.Windows.Forms.Button();
             this.btExcluir = new System.Windows.Forms.Button();
             this.btSalvar = new System.Windows.Forms.Button();
@@ -52,7 +52,7 @@
             this.pnBotoes.Controls.Add(this.btSalvar);
             this.pnBotoes.Controls.Add(this.btExcluir);
             this.pnBotoes.Controls.Add(this.btAlterar);
-            this.pnBotoes.Controls.Add(this.Localizar);
+            this.pnBotoes.Controls.Add(this.btLocalizar);
             this.pnBotoes.Controls.Add(this.btInserir);
             this.pnBotoes.Location = new System.Drawing.Point(13, 443);
             this.pnBotoes.Name = "pnBotoes";
@@ -72,22 +72,20 @@
             this.btInserir.Text = "Inserir";
             this.btInserir.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btInserir.UseVisualStyleBackColor = true;
-            this.btInserir.Click += new System.EventHandler(this.btInserir_Click);
             // 
-            // Localizar
+            // btLocalizar
             // 
-            this.Localizar.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
-            this.Localizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Localizar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Localizar.Image = global::GUI.Properties.Resources.localizar_fw;
-            this.Localizar.Location = new System.Drawing.Point(143, 12);
-            this.Localizar.Name = "Localizar";
-            this.Localizar.Size = new System.Drawing.Size(82, 82);
-            this.Localizar.TabIndex = 1;
-            this.Localizar.Text = "Localizar";
-            this.Localizar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.Localizar.UseVisualStyleBackColor = true;
-            this.Localizar.Click += new System.EventHandler(this.Localizar_Click);
+            this.btLocalizar.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
+            this.btLocalizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btLocalizar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btLocalizar.Image = global::GUI.Properties.Resources.localizar_fw;
+            this.btLocalizar.Location = new System.Drawing.Point(143, 12);
+            this.btLocalizar.Name = "btLocalizar";
+            this.btLocalizar.Size = new System.Drawing.Size(82, 82);
+            this.btLocalizar.TabIndex = 1;
+            this.btLocalizar.Text = "Localizar";
+            this.btLocalizar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btLocalizar.UseVisualStyleBackColor = true;
             // 
             // btAlterar
             // 
@@ -102,7 +100,6 @@
             this.btAlterar.Text = "Alterar";
             this.btAlterar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btAlterar.UseVisualStyleBackColor = true;
-            this.btAlterar.Click += new System.EventHandler(this.btAlterar_Click);
             // 
             // btExcluir
             // 
@@ -117,7 +114,6 @@
             this.btExcluir.Text = "Excluir";
             this.btExcluir.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btExcluir.UseVisualStyleBackColor = true;
-            this.btExcluir.Click += new System.EventHandler(this.btExcluir_Click);
             // 
             // btSalvar
             // 
@@ -146,7 +142,6 @@
             this.btCancelar.Text = "Cancelar";
             this.btCancelar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btCancelar.UseVisualStyleBackColor = true;
-            this.btCancelar.Click += new System.EventHandler(this.btCancelar_Click);
             // 
             // frmModeloDeFormularioDeCadastro
             // 
@@ -170,7 +165,7 @@
         private System.Windows.Forms.Button btSalvar;
         private System.Windows.Forms.Button btExcluir;
         private System.Windows.Forms.Button btAlterar;
-        private System.Windows.Forms.Button Localizar;
+        private System.Windows.Forms.Button btLocalizar;
         private System.Windows.Forms.Button btInserir;
         private System.Windows.Forms.Button btCancelar;
     }
