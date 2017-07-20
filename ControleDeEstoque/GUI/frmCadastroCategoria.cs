@@ -82,7 +82,7 @@ namespace GUI
                 //leitura de dados
                 DialogResult d = MessageBox.Show("Deseja excluir a categoria?", "Aviso", MessageBoxButtons.YesNo);
 
-                if (this.operacao == "inserir")
+                if (d.ToString() == "Yes")
                 {
                     // obj para gravar os dados no banco
                     DALConexao cx = new DALConexao(DadosDaConexao.StringDeConexao);
