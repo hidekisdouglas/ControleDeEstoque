@@ -17,6 +17,11 @@ namespace GUI
         {
             InitializeComponent();
         }
+        public void limpaTela()
+        {
+            txtSCod.Clear();
+            txtNomeSubcategoria.Clear();
+        }
 
         private void frmCadastroSubCategoria_Load(object sender, EventArgs e)
         {
@@ -28,13 +33,6 @@ namespace GUI
             cbNomeCategoria.DisplayMember = "cat_nome";
             cbNomeCategoria.ValueMember = "cat_cod";
         }
-
-        public void limpaTela()
-        {
-            txtSCod.Clear();
-            txtNomeSubcategoria.Clear();
-        }
-
 
         private void btInserir_Click(object sender, EventArgs e)
         {
@@ -100,7 +98,7 @@ namespace GUI
                 else
                 {
                     //alterar uma subcategoria
-                    modelo.CatCod = Convert.ToInt32(txtSCod.Text);
+                    modelo.ScatCod = Convert.ToInt32(txtSCod.Text);
                     bll.Alterar(modelo);
                     MessageBox.Show("Cadastro atualizado com sucesso!");
                 }
@@ -125,10 +123,9 @@ namespace GUI
             if (f.codigo != 0)
             {
                 ModeloSubCategoria modelo = bll.CarregarModeloSubCategoria(f.codigo);
-                txtSCod.Text = modelo.CatCod.ToString();
+                txtSCod.Text = modelo.ScatCod.ToString();
                 txtNomeSubcategoria.Text = modelo.ScatNome;
                 cbNomeCategoria.SelectedValue = modelo.CatCod;
-                cbNomeCategoria.DisplayMember = "cat_nome";
                 alteraBotoes(3);
             }
             else

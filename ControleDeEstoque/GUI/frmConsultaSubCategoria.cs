@@ -40,8 +40,7 @@ namespace GUI
             dgvDados.Columns[1].Width = 280;
             dgvDados.Columns[2].HeaderText = "Cod Cat";
             dgvDados.Columns[2].Width = 70;
-            dgvDados.Columns[2].HeaderText = "Categoria";
-            dgvDados.Columns[2].Width = 280;
+           
         }
 
         private void dgvDados_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
@@ -53,5 +52,7 @@ namespace GUI
                 this.Close();
             }
         }
+
+        
     }
 }
