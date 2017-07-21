@@ -67,7 +67,7 @@ namespace GUI
             }
             catch
             {
-                MessageBox.Show("Não é possível excluir a categoria! \n A categoria está sendo utilizada em outro local.");
+                MessageBox.Show("Não é possível excluir a subcategoria! \n A subcategoria está sendo utilizada em outro local.");
                 this.alteraBotoes(3);
             }
         }
@@ -92,14 +92,14 @@ namespace GUI
 
                 if (this.operacao == "inserir")
                 {
-                    //cadastrar uma categoria
+                    //cadastrar uma subcategoria
                     bll.Incluir(modelo);
                     MessageBox.Show("Cadastro efetuado com sucesso! \n O código da subcategoria é: " + modelo.ScatCod.ToString());
 
                 }
                 else
                 {
-                    //alterar uma categoria
+                    //alterar uma subcategoria
                     modelo.CatCod = Convert.ToInt32(txtSCod.Text);
                     bll.Alterar(modelo);
                     MessageBox.Show("Cadastro atualizado com sucesso!");
