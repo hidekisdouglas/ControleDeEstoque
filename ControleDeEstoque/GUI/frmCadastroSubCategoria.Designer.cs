@@ -91,9 +91,9 @@
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(13, 52);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(104, 13);
+            this.label2.Size = new System.Drawing.Size(116, 13);
             this.label2.TabIndex = 1;
-            this.label2.Text = "Nome da Subcatoria";
+            this.label2.Text = "Nome da Subcategoria";
             // 
             // cbNomeCategoria
             // 
