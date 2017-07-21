@@ -45,6 +45,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="frmConsultaSubCategoria.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmConsultaSubCategoria.Designer.cs">
+      <DependentUpon>frmConsultaSubCategoria.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmCadastroCategoria.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -77,6 +83,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="frmConsultaSubCategoria.resx">
+      <DependentUpon>frmConsultaSubCategoria.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmCadastroCategoria.resx">
       <DependentUpon>frmCadastroCategoria.cs</DependentUpon>
     </EmbeddedResource>
