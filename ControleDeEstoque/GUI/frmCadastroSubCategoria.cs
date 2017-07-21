@@ -115,18 +115,20 @@ namespace GUI
 
         private void btLocalizar_Click(object sender, EventArgs e)
         {
-            frmConsultaCategoria f = new frmConsultaCategoria();
+            frmConsultaSubCategoria f = new frmConsultaSubCategoria();
             // obj para gravar os dados no banco
             DALConexao cx = new DALConexao(DadosDaConexao.StringDeConexao);
-            BLLCategoria bll = new BLLCategoria(cx);
+            BLLSubcategoria bll = new BLLSubcategoria(cx);
             //exibe o frmConsultaCategoria para seleção da alteração
             f.ShowDialog();
             //verifica se foi armazenado uma categoria no frmConsultaCategoria
             if (f.codigo != 0)
             {
-                ModeloCategoria modelo = bll.CarregarModeloCategoria(f.codigo);
-                txtCodigo.Text = modelo.CatCod.ToString();
-                txtNome.Text = modelo.CatNome;
+                ModeloSubCategoria modelo = bll.CarregarModeloSubCategoria(f.codigo);
+                txtSCod.Text = modelo.CatCod.ToString();
+                txtNomeSubcategoria.Text = modelo.ScatNome;
+                cbNomeCategoria.SelectedValue = modelo.CatCod;
+                cbNomeCategoria.DisplayMember = "cat_nome";
                 alteraBotoes(3);
             }
             else
