@@ -1,5 +1,6 @@
 ﻿using BLL;
 using DAL;
+using Modelo;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -26,6 +27,90 @@ namespace GUI
             cbNomeCategoria.DataSource = bll.Localizar("");
             cbNomeCategoria.DisplayMember = "cat_nome";
             cbNomeCategoria.ValueMember = "cat_cod";
+        }
+
+        public void limpaTela()
+        {
+            txtSCod.Clear();
+            txtNomeSubcategoria.Clear();
+        }
+
+
+        private void btInserir_Click(object sender, EventArgs e)
+        {
+            this.operacao = "inserir";
+            this.alteraBotoes(2);
+        }
+
+        private void btAlterar_Click(object sender, EventArgs e)
+        {
+            this.operacao = "alterar";
+            this.alteraBotoes(2);
+        }
+
+        private void btExcluir_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                //leitura de dados
+                DialogResult d = MessageBox.Show("Deseja excluir a subcategoria?", "Aviso", MessageBoxButtons.YesNo);
+
+                if (d.ToString() == "Yes")
+                {
+                    // obj para gravar os dados no banco
+                    DALConexao cx = new DALConexao(DadosDaConexao.StringDeConexao);
+                    BLLCategoria bll = new BLLCategoria(cx);
+                    bll.Excluir(Convert.ToInt32(txtSCod.Text));
+                    this.limpaTela();
+                    this.alteraBotoes(1);
+                }
+            }
+            catch
+            {
+                MessageBox.Show("Não é possível excluir a categoria! \n A categoria está sendo utilizada em outro local.");
+                this.alteraBotoes(3);
+            }
+        }
+
+        private void btCancelar_Click(object sender, EventArgs e)
+        {
+            this.limpaTela();
+            this.alteraBotoes(1);
+        }
+
+        private void btSalvar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                //leitura de dados
+                ModeloSubCategoria modelo = new ModeloSubCategoria();
+                modelo.ScatNome = txtNomeSubcategoria.Text;
+                modelo.CatCod = Convert.ToInt32(cbNomeCategoria.SelectedValue);
+                // obj para gravar os dados no banco
+                DALConexao cx = new DALConexao(DadosDaConexao.StringDeConexao);
+                BLLSubcategoria bll = new BLLSubcategoria(cx);
+
+                if (this.operacao == "inserir")
+                {
+                    //cadastrar uma categoria
+                    bll.Incluir(modelo);
+                    MessageBox.Show("Cadastro efetuado com sucesso! O código da categoria é: " + modelo.ScatCod.ToString());
+
+                }
+                else
+                {
+                    //alterar uma categoria
+                    modelo.CatCod = Convert.ToInt32(txtCodigo.Text);
+                    bll.Alterar(modelo);
+                    MessageBox.Show("Cadastro atualizado com sucesso!");
+                }
+                this.limpaTela();
+                this.alteraBotoes(1);
+            }
+            catch (Exception erro)
+            {
+                MessageBox.Show(erro.Message);
+            }
         }
     }
 }

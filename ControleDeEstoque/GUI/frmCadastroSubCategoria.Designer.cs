@@ -50,14 +50,17 @@
             // btSalvar
             // 
             this.btSalvar.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
+            this.btSalvar.Click += new System.EventHandler(this.btSalvar_Click);
             // 
             // btExcluir
             // 
             this.btExcluir.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
+            this.btExcluir.Click += new System.EventHandler(this.btExcluir_Click);
             // 
             // btAlterar
             // 
             this.btAlterar.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
+            this.btAlterar.Click += new System.EventHandler(this.btAlterar_Click);
             // 
             // btLocalizar
             // 
@@ -66,10 +69,12 @@
             // btInserir
             // 
             this.btInserir.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
+            this.btInserir.Click += new System.EventHandler(this.btInserir_Click);
             // 
             // btCancelar
             // 
             this.btCancelar.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
+            this.btCancelar.Click += new System.EventHandler(this.btCancelar_Click);
             // 
             // label1
             // 
