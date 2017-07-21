@@ -59,7 +59,7 @@ namespace GUI
                 {
                     // obj para gravar os dados no banco
                     DALConexao cx = new DALConexao(DadosDaConexao.StringDeConexao);
-                    BLLCategoria bll = new BLLCategoria(cx);
+                    BLLSubcategoria bll = new BLLSubcategoria(cx);
                     bll.Excluir(Convert.ToInt32(txtSCod.Text));
                     this.limpaTela();
                     this.alteraBotoes(1);
@@ -94,13 +94,13 @@ namespace GUI
                 {
                     //cadastrar uma categoria
                     bll.Incluir(modelo);
-                    MessageBox.Show("Cadastro efetuado com sucesso! O código da categoria é: " + modelo.ScatCod.ToString());
+                    MessageBox.Show("Cadastro efetuado com sucesso! \n O código da subcategoria é: " + modelo.ScatCod.ToString());
 
                 }
                 else
                 {
                     //alterar uma categoria
-                    modelo.CatCod = Convert.ToInt32(txtCodigo.Text);
+                    modelo.CatCod = Convert.ToInt32(txtSCod.Text);
                     bll.Alterar(modelo);
                     MessageBox.Show("Cadastro atualizado com sucesso!");
                 }
@@ -111,6 +111,11 @@ namespace GUI
             {
                 MessageBox.Show(erro.Message);
             }
+        }
+
+        private void btLocalizar_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
