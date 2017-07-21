@@ -14,7 +14,7 @@ namespace DAL
         private DALConexao conexao;
        
         //Construtor
-        public DALSubCategoria(DALConexao cx)
+       public DALSubcategoria(DALConexao cx)
         {
             this.conexao = cx;
         }
