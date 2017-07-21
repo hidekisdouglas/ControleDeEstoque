@@ -159,6 +159,7 @@
             this.subCategoriaToolStripMenuItem1.Name = "subCategoriaToolStripMenuItem1";
             this.subCategoriaToolStripMenuItem1.Size = new System.Drawing.Size(177, 22);
             this.subCategoriaToolStripMenuItem1.Text = "SubCategoria";
+            this.subCategoriaToolStripMenuItem1.Click += new System.EventHandler(this.subCategoriaToolStripMenuItem1_Click);
             // 
             // unidadeDeMedidaToolStripMenuItem1
             // 
