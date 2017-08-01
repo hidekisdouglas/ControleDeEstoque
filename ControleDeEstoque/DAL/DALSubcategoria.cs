@@ -99,7 +99,7 @@ namespace DAL
         {
             DataTable tabela = new DataTable();
             SqlDataAdapter da = new SqlDataAdapter("select sc.scat_cod, sc.scat_nome, c.cat_cod, c.cat_nome from subcategoria sc" +
-                " inner join categoria c on sc.cat_cod = c.cat_cod where sc.cat_cod = categoria.ToString()", conexao.stringConexao);
+                " inner join categoria c on sc.cat_cod = c.cat_cod where sc.cat_cod = "+categoria.ToString(), conexao.stringConexao);
             da.Fill(tabela);
             return tabela;
         }

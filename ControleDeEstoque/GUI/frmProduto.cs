@@ -45,6 +45,16 @@ namespace GUI
             cbCategoria.DataSource = bll.Localizar("");
             cbCategoria.DisplayMember = "cat_nome";
             cbCategoria.ValueMember = "cat_cod";
+            //criar conexão para exibir no combobox os nomes da subcategoria
+            BLLSubcategoria sbll = new BLLSubcategoria(cx);
+            cbSubCategoria.DataSource = sbll.LocalizaPorCategoria((int)cbCategoria.SelectedValue);
+            cbSubCategoria.DisplayMember = "scat_nome";
+            cbSubCategoria.ValueMember = "scat_cod";
+            //criar conexão para exibir no combobox os nomes da unidade de medidas
+            BLLUnidadeDeMedida ubll = new BLLUnidadeDeMedida(cx);
+            cbUnidadeDeMedida.DataSource = ubll.Localizar("");
+            cbUnidadeDeMedida.DisplayMember = "umed_nome";
+            cbUnidadeDeMedida.ValueMember = "umed_cod";
         }
 
         private void txtValorPago_KeyPress(object sender, KeyPressEventArgs e)
