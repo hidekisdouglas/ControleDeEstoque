@@ -3,6 +3,7 @@ using Modelo;
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -56,6 +57,25 @@ namespace BLL
         {
             DALUnidadeDeMedida DALobj = new DALUnidadeDeMedida(conexao);
             return DALobj.CarregaModeloUnidadeDeMedida(codigo);
+        }
+        public int VerificaUnidadeDeMedida(String valor)
+        {
+            int r = 0;
+
+            SqlCommand cmd = new SqlCommand();
+            cmd.Connection = conexao.ObjetoConexao;
+            cmd.CommandText = ("select * from undmedida where umed_nome = @nome");
+            cmd.Parameters.AddWithValue("@nome", valor);
+            conexao.Connectar();
+            SqlDataReader registro = cmd.ExecuteReader();
+            if (registro.HasRows)
+            {
+                registro.Read();
+                r = Convert.ToInt32(registro["umed_cod"]);
+
+            }
+            conexao.Desconectar();
+            return r;
         }
     }
 }

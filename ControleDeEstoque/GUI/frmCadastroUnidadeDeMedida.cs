@@ -117,6 +117,31 @@ namespace GUI
                 MessageBox.Show("Não é possível excluir a Unidade de Medida! \n A unidade de medida está sendo utilizada em outro local.");
                 this.alteraBotoes(3);
             }
-        }   
+        }
+
+        private void txtNome_Leave(object sender, EventArgs e)
+        {
+            if (this.operacao == "inserir")
+            {
+                int r = 0;
+                DALConexao cx = new DALConexao(DadosDaConexao.StringDeConexao);
+                BLLUnidadeDeMedida bll = new BLLUnidadeDeMedida(cx);
+                r = bll.VerificaUnidadeDeMedida(txtNome.Text);
+                if (r > 0)
+                {
+                        //leitura de dados
+                        DialogResult d = MessageBox.Show("Já existe um registro com esse nome. Deseja alterar o registro?", "Aviso", MessageBoxButtons.YesNo);
+                        if (d.ToString() == "Yes")
+                        {
+                        this.operacao = "alterar";
+                        ModeloUnidadeDeMedida modelo = bll.CarregarModeloUnidadeDeMedida(r);
+                        txtCodigo.Text = modelo.UmedCod.ToString();
+                        txtNome.Text = modelo.UmedNome;
+                        //alteraBotoes(3);
+                    }
+                }
+
+            }
+        }
     }
 }

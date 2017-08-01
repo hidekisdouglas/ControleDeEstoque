@@ -79,6 +79,7 @@
             this.txtNome.Name = "txtNome";
             this.txtNome.Size = new System.Drawing.Size(718, 20);
             this.txtNome.TabIndex = 7;
+            this.txtNome.Leave += new System.EventHandler(this.txtNome_Leave);
             // 
             // txtCodigo
             // 
@@ -93,9 +94,9 @@
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(10, 62);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(35, 13);
+            this.label2.Size = new System.Drawing.Size(100, 13);
             this.label2.TabIndex = 5;
-            this.label2.Text = "Nome";
+            this.label2.Text = "Unidade de Medida";
             // 
             // label1
             // 
