@@ -45,11 +45,19 @@ namespace GUI
             cbCategoria.DataSource = bll.Localizar("");
             cbCategoria.DisplayMember = "cat_nome";
             cbCategoria.ValueMember = "cat_cod";
-            //criar conexão para exibir no combobox os nomes da subcategoria
-            BLLSubcategoria sbll = new BLLSubcategoria(cx);
-            cbSubCategoria.DataSource = sbll.LocalizaPorCategoria((int)cbCategoria.SelectedValue);
-            cbSubCategoria.DisplayMember = "scat_nome";
-            cbSubCategoria.ValueMember = "scat_cod";
+            try
+            {
+                //criar conexão para exibir no combobox os nomes da subcategoria
+                BLLSubcategoria sbll = new BLLSubcategoria(cx);
+                cbSubCategoria.DataSource = sbll.LocalizaPorCategoria((int)cbCategoria.SelectedValue);
+                cbSubCategoria.DisplayMember = "scat_nome";
+                cbSubCategoria.ValueMember = "scat_cod";
+            }
+            catch
+            {
+                MessageBox.Show("Cadastre uma cegoria");
+            }
+            
             //criar conexão para exibir no combobox os nomes da unidade de medidas
             BLLUnidadeDeMedida ubll = new BLLUnidadeDeMedida(cx);
             cbUnidadeDeMedida.DataSource = ubll.Localizar("");
@@ -268,6 +276,25 @@ namespace GUI
             }
             f.Dispose();
 
+        }
+
+        private void cbCategoria_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            //criar conexão para exibir no combobox os nomes da categoria
+            DALConexao cx = new DALConexao(DadosDaConexao.StringDeConexao);
+            try
+            {
+                cbSubCategoria.Text = "";
+                //criar conexão para exibir no combobox os nomes da subcategoria
+                BLLSubcategoria sbll = new BLLSubcategoria(cx);
+                cbSubCategoria.DataSource = sbll.LocalizaPorCategoria((int)cbCategoria.SelectedValue);
+                cbSubCategoria.DisplayMember = "scat_nome";
+                cbSubCategoria.ValueMember = "scat_cod";
+            }
+            catch
+            {
+               // MessageBox.Show("Cadastre uma cegoria");
+            }
         }
     }
 }
