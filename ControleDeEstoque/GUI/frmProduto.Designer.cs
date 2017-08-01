@@ -234,6 +234,8 @@
             this.txtQtde.Name = "txtQtde";
             this.txtQtde.Size = new System.Drawing.Size(168, 20);
             this.txtQtde.TabIndex = 14;
+            this.txtQtde.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtQtde_KeyPress);
+            this.txtQtde.Leave += new System.EventHandler(this.txtQtde_Leave);
             // 
             // cbUnidadeDeMedida
             // 

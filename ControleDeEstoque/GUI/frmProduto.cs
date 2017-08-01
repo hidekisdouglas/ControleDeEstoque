@@ -49,7 +49,7 @@ namespace GUI
         {
             if (txtValorPago.Text.Contains(".") == false)
             {
-                txtValorPago.Text += "0.00";
+                txtValorPago.Text += ".00";
             }
             else
             {
@@ -88,7 +88,7 @@ namespace GUI
         {
             if (txtValorVenda.Text.Contains(".") == false)
             {
-                txtValorVenda.Text += "0.00";
+                txtValorVenda.Text += ".00";
             }
             else
             {
@@ -104,6 +104,45 @@ namespace GUI
             catch
             {
                 txtValorVenda.Text = "0.00";
+            }
+        }
+
+        private void txtQtde_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!Char.IsDigit(e.KeyChar) && e.KeyChar != (char)8 && e.KeyChar != ',' && e.KeyChar != '.')
+            {
+                e.Handled = true;
+            }
+            if (e.KeyChar == ',' || e.KeyChar == '.')
+            {
+                if (!txtQtde.Text.Contains("."))
+                {
+                    e.KeyChar = '.';
+                }
+                else e.Handled = true;
+            }
+        }
+
+        private void txtQtde_Leave(object sender, EventArgs e)
+        {
+            if (txtQtde.Text.Contains(".") == false)
+            {
+                txtQtde.Text += ".00";
+            }
+            else
+            {
+                if (txtQtde.Text.IndexOf(".") == txtQtde.Text.Length - 1)
+                {
+                    txtQtde.Text += "00";
+                }
+            }
+            try
+            {
+                double d = Convert.ToDouble(txtQtde.Text);
+            }
+            catch
+            {
+                txtQtde.Text = "0.00";
             }
         }
     }
