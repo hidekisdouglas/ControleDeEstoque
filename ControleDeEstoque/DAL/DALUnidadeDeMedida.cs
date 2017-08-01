@@ -56,7 +56,7 @@ namespace DAL
         public DataTable Localizar(String valor)
         {
             DataTable tabela = new DataTable();
-            SqlDataAdapter da = new SqlDataAdapter("select * from unidmedida where umed_nome like '%" + valor + "%'", conexao.stringConexao);
+            SqlDataAdapter da = new SqlDataAdapter("select * from undmedida where umed_nome like '%" + valor + "%'", conexao.stringConexao);
             da.Fill(tabela);
             return tabela;
         }
