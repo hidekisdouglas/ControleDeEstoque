@@ -47,10 +47,10 @@
             this.cbCategoria = new System.Windows.Forms.ComboBox();
             this.cbSubCategoria = new System.Windows.Forms.ComboBox();
             this.pnFoto = new System.Windows.Forms.Panel();
+            this.picFoto = new System.Windows.Forms.PictureBox();
             this.label10 = new System.Windows.Forms.Label();
             this.btCarregar = new System.Windows.Forms.Button();
             this.btRemover = new System.Windows.Forms.Button();
-            this.picFoto = new System.Windows.Forms.PictureBox();
             this.pnDados.SuspendLayout();
             this.pnBotoes.SuspendLayout();
             this.pnFoto.SuspendLayout();
@@ -216,6 +216,8 @@
             this.txtValorPago.Name = "txtValorPago";
             this.txtValorPago.Size = new System.Drawing.Size(171, 20);
             this.txtValorPago.TabIndex = 12;
+            this.txtValorPago.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtValorPago_KeyPress);
+            this.txtValorPago.Leave += new System.EventHandler(this.txtValorPago_Leave);
             // 
             // txtValorVenda
             // 
@@ -223,6 +225,8 @@
             this.txtValorVenda.Name = "txtValorVenda";
             this.txtValorVenda.Size = new System.Drawing.Size(178, 20);
             this.txtValorVenda.TabIndex = 13;
+            this.txtValorVenda.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtValorVenda_KeyPress);
+            this.txtValorVenda.Leave += new System.EventHandler(this.txtValorVenda_Leave);
             // 
             // txtQtde
             // 
@@ -263,6 +267,16 @@
             this.pnFoto.Size = new System.Drawing.Size(315, 342);
             this.pnFoto.TabIndex = 18;
             // 
+            // picFoto
+            // 
+            this.picFoto.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.picFoto.Location = new System.Drawing.Point(0, 0);
+            this.picFoto.Name = "picFoto";
+            this.picFoto.Size = new System.Drawing.Size(315, 342);
+            this.picFoto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picFoto.TabIndex = 0;
+            this.picFoto.TabStop = false;
+            // 
             // label10
             // 
             this.label10.AutoSize = true;
@@ -296,16 +310,6 @@
             this.btRemover.TabIndex = 21;
             this.btRemover.Text = "Remover";
             this.btRemover.UseVisualStyleBackColor = false;
-            // 
-            // picFoto
-            // 
-            this.picFoto.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.picFoto.Location = new System.Drawing.Point(0, 0);
-            this.picFoto.Name = "picFoto";
-            this.picFoto.Size = new System.Drawing.Size(315, 342);
-            this.picFoto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picFoto.TabIndex = 0;
-            this.picFoto.TabStop = false;
             // 
             // frmProduto
             // 
