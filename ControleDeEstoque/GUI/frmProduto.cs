@@ -39,6 +39,12 @@ namespace GUI
         private void frmProduto_Load(object sender, EventArgs e)
         {
             this.alteraBotoes(1);
+            //criar conexão para exibir no combobox os nomes da categoria
+            DALConexao cx = new DALConexao(DadosDaConexao.StringDeConexao);
+            BLLCategoria bll = new BLLCategoria(cx);
+            cbCategoria.DataSource = bll.Localizar("");
+            cbCategoria.DisplayMember = "cat_nome";
+            cbCategoria.ValueMember = "cat_cod";
         }
 
         private void txtValorPago_KeyPress(object sender, KeyPressEventArgs e)
@@ -234,15 +240,15 @@ namespace GUI
             frmConsultaCategoria f = new frmConsultaCategoria();
             // obj para gravar os dados no banco
             DALConexao cx = new DALConexao(DadosDaConexao.StringDeConexao);
-            BLLCategoria bll = new BLLCategoria(cx);
-            //exibe o frmConsultaCategoria para seleção da alteração
+            BLLProduto bll = new BLLProduto(cx);
+            //exibe o frmConsultaProduto para seleção da alteração
             f.ShowDialog();
             //verifica se foi armazenado uma categoria no frmConsultaCategoria
             if (f.codigo != 0)
             {
-                ModeloCategoria modelo = bll.CarregarModeloCategoria(f.codigo);
-                txtCodigo.Text = modelo.CatCod.ToString();
-                txtNome.Text = modelo.CatNome;
+                ModeloProduto modelo = bll.CarregarModeloProduto(f.codigo);
+                txtCodigo.Text = modelo.ProCod.ToString();
+                txtProduto.Text = modelo.ProNome;
                 alteraBotoes(3);
             }
             else
