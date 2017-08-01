@@ -1,6 +1,6 @@
 ﻿namespace GUI
 {
-    partial class frmUnidadeDeMedida
+    partial class frmCadastroUnidadeDeMedida
     {
         /// <summary>
         /// Variável de designer necessária.

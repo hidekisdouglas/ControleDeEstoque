@@ -8,9 +8,9 @@ using System.Windows.Forms;
 
 namespace GUI
 {
-    public partial class frmUnidadeDeMedida : GUI.frmModeloDeFormularioDeCadastro
+    public partial class frmCadastroUnidadeDeMedida : GUI.frmModeloDeFormularioDeCadastro
     {
-        public frmUnidadeDeMedida()
+        public frmCadastroUnidadeDeMedida()
         {
             InitializeComponent();
         }
