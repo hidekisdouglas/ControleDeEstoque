@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BBL
+namespace BLL
 {
     public class BLLProduto
     {

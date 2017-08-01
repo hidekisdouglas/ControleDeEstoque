@@ -85,18 +85,22 @@
             // btSalvar
             // 
             this.btSalvar.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
+            this.btSalvar.Click += new System.EventHandler(this.btSalvar_Click);
             // 
             // btExcluir
             // 
             this.btExcluir.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
+            this.btExcluir.Click += new System.EventHandler(this.btExcluir_Click);
             // 
             // btAlterar
             // 
             this.btAlterar.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
+            this.btAlterar.Click += new System.EventHandler(this.btAlterar_Click);
             // 
             // btLocalizar
             // 
             this.btLocalizar.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
+            this.btLocalizar.Click += new System.EventHandler(this.btLocalizar_Click);
             // 
             // btInserir
             // 
@@ -106,6 +110,7 @@
             // btCancelar
             // 
             this.btCancelar.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
+            this.btCancelar.Click += new System.EventHandler(this.btCancelar_Click);
             // 
             // label1
             // 
@@ -216,6 +221,7 @@
             this.txtValorPago.Name = "txtValorPago";
             this.txtValorPago.Size = new System.Drawing.Size(171, 20);
             this.txtValorPago.TabIndex = 12;
+            this.txtValorPago.Text = "0.00";
             this.txtValorPago.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtValorPago_KeyPress);
             this.txtValorPago.Leave += new System.EventHandler(this.txtValorPago_Leave);
             // 
@@ -225,6 +231,7 @@
             this.txtValorVenda.Name = "txtValorVenda";
             this.txtValorVenda.Size = new System.Drawing.Size(178, 20);
             this.txtValorVenda.TabIndex = 13;
+            this.txtValorVenda.Text = "0.00";
             this.txtValorVenda.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtValorVenda_KeyPress);
             this.txtValorVenda.Leave += new System.EventHandler(this.txtValorVenda_Leave);
             // 
@@ -234,6 +241,7 @@
             this.txtQtde.Name = "txtQtde";
             this.txtQtde.Size = new System.Drawing.Size(168, 20);
             this.txtQtde.TabIndex = 14;
+            this.txtQtde.Text = "0.00";
             this.txtQtde.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtQtde_KeyPress);
             this.txtQtde.Leave += new System.EventHandler(this.txtQtde_Leave);
             // 
@@ -271,6 +279,7 @@
             // 
             // picFoto
             // 
+            this.picFoto.BackColor = System.Drawing.Color.Silver;
             this.picFoto.Dock = System.Windows.Forms.DockStyle.Fill;
             this.picFoto.Location = new System.Drawing.Point(0, 0);
             this.picFoto.Name = "picFoto";
