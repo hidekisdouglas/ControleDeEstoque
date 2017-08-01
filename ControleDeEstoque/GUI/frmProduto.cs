@@ -13,6 +13,7 @@ namespace GUI
 {
     public partial class frmProduto : GUI.frmModeloDeFormularioDeCadastro
     {
+        //representa a variavel da foto no frmProduto
         public string foto = "";
 
         public frmProduto()
@@ -295,6 +296,23 @@ namespace GUI
             {
                // MessageBox.Show("Cadastre uma cegoria");
             }
+        }
+
+        private void btCarregar_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog ofd = new OpenFileDialog();
+            ofd.ShowDialog();
+            if (!string.IsNullOrEmpty(ofd.FileName))
+            {
+                this.foto = ofd.FileName;
+                picFoto.Load(this.foto);
+            }
+        }
+
+        private void btRemover_Click(object sender, EventArgs e)
+        {
+            this.foto = "";
+            picFoto.Image = null;
         }
     }
 }

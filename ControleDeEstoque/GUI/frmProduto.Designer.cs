@@ -310,6 +310,7 @@
             this.btCarregar.TabIndex = 20;
             this.btCarregar.Text = "Carregar";
             this.btCarregar.UseVisualStyleBackColor = false;
+            this.btCarregar.Click += new System.EventHandler(this.btCarregar_Click);
             // 
             // btRemover
             // 
@@ -322,6 +323,7 @@
             this.btRemover.TabIndex = 21;
             this.btRemover.Text = "Remover";
             this.btRemover.UseVisualStyleBackColor = false;
+            this.btRemover.Click += new System.EventHandler(this.btRemover_Click);
             // 
             // frmProduto
             // 
