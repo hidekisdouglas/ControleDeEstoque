@@ -3,10 +3,13 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using DAL;
+using System.Data.SqlClient;
 
 namespace GUI
 {
@@ -93,6 +96,33 @@ namespace GUI
         private void blocoDeNotasToolStripMenuItem_Click(object sender, EventArgs e)
         {
             System.Diagnostics.Process.Start("notpad");
+        }
+
+        private void frmPrincipal_Load(object sender, EventArgs e)
+        {
+            try
+            {
+                StreamReader arquivo = new StreamReader("configuracaobanco.txt");
+                DadosDaConexao.servidor = arquivo.ReadLine();
+                DadosDaConexao.banco = arquivo.ReadLine();
+                DadosDaConexao.usuario = arquivo.ReadLine();
+                DadosDaConexao.senha = arquivo.ReadLine();
+                arquivo.Close();
+                //testar conexao
+                SqlConnection conexao = new SqlConnection();
+                conexao.ConnectionString = DadosDaConexao.StringDeConexao;
+                conexao.Open();
+                conexao.Close();
+
+            }
+            catch (SqlException erroB)
+            {
+                MessageBox.Show("Erro de Conexão. Por favor verificar as informações de conexão(Nome do servidor, nome do banco, usuário e senha) \n Acesse em ferramentas, as configurações de BD.");
+            }
+            catch (Exception er)
+            {
+                MessageBox.Show(er.Message);
+            }
         }
     }
 }

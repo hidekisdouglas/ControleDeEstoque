@@ -1,7 +1,9 @@
-﻿using System;
+﻿using DAL;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.IO;
 using System.Linq;
@@ -47,6 +49,34 @@ namespace GUI
                 txtSenha.Text = arquivo.ReadLine();
                 arquivo.Close();
                 
+            }
+            catch (Exception er)
+            {
+                MessageBox.Show(er.Message);
+            }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                
+                DadosDaConexao.servidor = txtServidor.Text;
+                DadosDaConexao.banco = txtBancoDeDados.Text;
+                DadosDaConexao.usuario = txtUsuario.Text;
+                DadosDaConexao.senha = txtSenha.Text;
+                
+                //testar conexao
+                SqlConnection conexao = new SqlConnection();
+                conexao.ConnectionString = DadosDaConexao.StringDeConexao;
+                conexao.Open();
+                conexao.Close();
+                MessageBox.Show("Conexão efetuada com sucesso!");
+
+            }
+            catch (SqlException erroB)
+            {
+                MessageBox.Show("Erro de Conexão. Por favor verificar as informações de conexão(Nome do servidor, nome do banco, usuário e senha) \n Acesse em ferramentas, as configurações de BD.");
             }
             catch (Exception er)
             {
