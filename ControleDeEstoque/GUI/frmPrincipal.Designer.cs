@@ -52,6 +52,10 @@
             this.sobreToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.configuraçãoDoBDToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.backupDoBDToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
+            this.calculadoraToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.explorerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.blocoDeNotasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -212,7 +216,11 @@
             // 
             this.ferramentasToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.configuraçãoDoBDToolStripMenuItem,
-            this.backupDoBDToolStripMenuItem});
+            this.backupDoBDToolStripMenuItem,
+            this.toolStripSeparator3,
+            this.calculadoraToolStripMenuItem,
+            this.explorerToolStripMenuItem,
+            this.blocoDeNotasToolStripMenuItem});
             this.ferramentasToolStripMenuItem.Name = "ferramentasToolStripMenuItem";
             this.ferramentasToolStripMenuItem.Size = new System.Drawing.Size(84, 20);
             this.ferramentasToolStripMenuItem.Text = "Ferramentas";
@@ -235,6 +243,32 @@
             this.backupDoBDToolStripMenuItem.Name = "backupDoBDToolStripMenuItem";
             this.backupDoBDToolStripMenuItem.Size = new System.Drawing.Size(181, 22);
             this.backupDoBDToolStripMenuItem.Text = "Backup do BD";
+            // 
+            // toolStripSeparator3
+            // 
+            this.toolStripSeparator3.Name = "toolStripSeparator3";
+            this.toolStripSeparator3.Size = new System.Drawing.Size(178, 6);
+            // 
+            // calculadoraToolStripMenuItem
+            // 
+            this.calculadoraToolStripMenuItem.Name = "calculadoraToolStripMenuItem";
+            this.calculadoraToolStripMenuItem.Size = new System.Drawing.Size(181, 22);
+            this.calculadoraToolStripMenuItem.Text = "Calculadora";
+            this.calculadoraToolStripMenuItem.Click += new System.EventHandler(this.calculadoraToolStripMenuItem_Click);
+            // 
+            // explorerToolStripMenuItem
+            // 
+            this.explorerToolStripMenuItem.Name = "explorerToolStripMenuItem";
+            this.explorerToolStripMenuItem.Size = new System.Drawing.Size(181, 22);
+            this.explorerToolStripMenuItem.Text = "Explorer";
+            this.explorerToolStripMenuItem.Click += new System.EventHandler(this.explorerToolStripMenuItem_Click);
+            // 
+            // blocoDeNotasToolStripMenuItem
+            // 
+            this.blocoDeNotasToolStripMenuItem.Name = "blocoDeNotasToolStripMenuItem";
+            this.blocoDeNotasToolStripMenuItem.Size = new System.Drawing.Size(181, 22);
+            this.blocoDeNotasToolStripMenuItem.Text = "Bloco de notas";
+            this.blocoDeNotasToolStripMenuItem.Click += new System.EventHandler(this.blocoDeNotasToolStripMenuItem_Click);
             // 
             // frmPrincipal
             // 
@@ -280,5 +314,9 @@
         private System.Windows.Forms.ToolStripMenuItem fornecedorToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem configuraçãoDoBDToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem backupDoBDToolStripMenuItem;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
+        private System.Windows.Forms.ToolStripMenuItem calculadoraToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem explorerToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem blocoDeNotasToolStripMenuItem;
     }
 }
