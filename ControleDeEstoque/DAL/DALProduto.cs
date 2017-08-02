@@ -92,7 +92,12 @@ namespace DAL
         public DataTable Localizar(String valor)
         {
             DataTable tabela = new DataTable();
-            SqlDataAdapter da = new SqlDataAdapter("select * from produto where pro_nome like '%" + valor + "%'", conexao.stringConexao);
+            SqlDataAdapter da = new SqlDataAdapter("select p.pro_cod, p.pro_nome, p.pro_descricao, p.pro_foto, p.pro_valorpago, p.pro_valorvenda, p.pro_qtde," +
+                " u.umed_nome, c.cat_nome, sc.scat_nome from produto p " +
+                " inner join undmedida u on p.umed_cod = u.umed_cod " +
+                " inner join categoria c on p.cat_cod = c.cat_cod " +
+                " inner join subcategoria sc on p.scat_cod = sc.scat_cod" +
+                " where p.pro_nome like '%" + valor + "%'", conexao.stringConexao);
             da.Fill(tabela);
             return tabela;
         }

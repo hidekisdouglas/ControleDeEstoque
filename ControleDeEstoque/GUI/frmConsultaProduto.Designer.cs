@@ -85,6 +85,7 @@
             this.Name = "frmConsultaProduto";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Consulta de Produtos";
+            this.Load += new System.EventHandler(this.frmConsultaProduto_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvDados)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
