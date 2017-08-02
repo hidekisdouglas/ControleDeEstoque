@@ -72,5 +72,12 @@ namespace GUI
             f.ShowDialog();
             f.Dispose();
         }
+
+        private void configuraçãoDoBDToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmConfiguracaoBancoDados f = new frmConfiguracaoBancoDados();
+            f.ShowDialog();
+            f.Dispose();
+        }
     }
 }

@@ -237,7 +237,7 @@ namespace GUI
                 modelo.UmedCod = Convert.ToInt32(cbUnidadeDeMedida.SelectedValue);
                 modelo.CatCod = Convert.ToInt32(cbCategoria.SelectedValue);
                 modelo.ScatCod = Convert.ToInt32(cbSubCategoria.SelectedValue);
-                modelo.CarregaImagem(this.foto);
+               
 
                 // obj para gravar os dados no banco
                 DALConexao cx = new DALConexao(DadosDaConexao.StringDeConexao);
@@ -245,7 +245,8 @@ namespace GUI
 
                 if (this.operacao == "inserir")
                 {
-                    //cadastrar uma categoria
+                    //cadastrar um produto
+                    modelo.CarregaImagem(this.foto);
                     bll.Incluir(modelo);
                     MessageBox.Show("Cadastro efetuado com sucesso! O código do produto é: " + modelo.ProCod.ToString());
 
@@ -254,6 +255,15 @@ namespace GUI
                 {
                     //alterar uma categoria
                     modelo.ProCod = Convert.ToInt32(txtCodigo.Text);
+                    if (this.foto == "Foto Original")
+                    {
+                        ModeloProduto mt = bll.CarregarModeloProduto(modelo.ProCod);
+                        modelo.ProFoto = mt.ProFoto;
+                    }
+                    else
+                    {
+                        modelo.CarregaImagem(this.foto);
+                    }
                     bll.Alterar(modelo);
                     MessageBox.Show("Cadastro atualizado com sucesso!");
                 }
@@ -292,6 +302,7 @@ namespace GUI
                 {
                     MemoryStream ms = new MemoryStream(modelo.ProFoto);
                     picFoto.Image = Image.FromStream(ms);
+                    this.foto = "Foto Original";
                 }
                 catch { }
                 

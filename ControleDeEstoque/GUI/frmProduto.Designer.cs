@@ -317,6 +317,7 @@
             // 
             // picFoto
             // 
+            this.picFoto.BackColor = System.Drawing.Color.Silver;
             this.picFoto.Dock = System.Windows.Forms.DockStyle.Fill;
             this.picFoto.Location = new System.Drawing.Point(0, 0);
             this.picFoto.Name = "picFoto";

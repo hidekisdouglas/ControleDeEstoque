@@ -50,6 +50,8 @@
             this.relatórioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ferramentasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sobreToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.configuraçãoDoBDToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.backupDoBDToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -208,6 +210,9 @@
             // 
             // ferramentasToolStripMenuItem
             // 
+            this.ferramentasToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.configuraçãoDoBDToolStripMenuItem,
+            this.backupDoBDToolStripMenuItem});
             this.ferramentasToolStripMenuItem.Name = "ferramentasToolStripMenuItem";
             this.ferramentasToolStripMenuItem.Size = new System.Drawing.Size(84, 20);
             this.ferramentasToolStripMenuItem.Text = "Ferramentas";
@@ -217,6 +222,19 @@
             this.sobreToolStripMenuItem.Name = "sobreToolStripMenuItem";
             this.sobreToolStripMenuItem.Size = new System.Drawing.Size(49, 20);
             this.sobreToolStripMenuItem.Text = "Sobre";
+            // 
+            // configuraçãoDoBDToolStripMenuItem
+            // 
+            this.configuraçãoDoBDToolStripMenuItem.Name = "configuraçãoDoBDToolStripMenuItem";
+            this.configuraçãoDoBDToolStripMenuItem.Size = new System.Drawing.Size(181, 22);
+            this.configuraçãoDoBDToolStripMenuItem.Text = "Configuração do BD";
+            this.configuraçãoDoBDToolStripMenuItem.Click += new System.EventHandler(this.configuraçãoDoBDToolStripMenuItem_Click);
+            // 
+            // backupDoBDToolStripMenuItem
+            // 
+            this.backupDoBDToolStripMenuItem.Name = "backupDoBDToolStripMenuItem";
+            this.backupDoBDToolStripMenuItem.Size = new System.Drawing.Size(181, 22);
+            this.backupDoBDToolStripMenuItem.Text = "Backup do BD";
             // 
             // frmPrincipal
             // 
@@ -260,5 +278,7 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
         private System.Windows.Forms.ToolStripMenuItem clienteToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem fornecedorToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem configuraçãoDoBDToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem backupDoBDToolStripMenuItem;
     }
 }
