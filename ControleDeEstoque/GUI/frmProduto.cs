@@ -77,9 +77,9 @@ namespace GUI
             }
             if (e.KeyChar == ',' || e.KeyChar == '.')
             {
-                if (!txtValorPago.Text.Contains("."))
+                if (!txtValorPago.Text.Contains(","))
                 {
-                    e.KeyChar = '.';
+                    e.KeyChar = ',';
                 }
                 else e.Handled = true;
             }
@@ -88,13 +88,13 @@ namespace GUI
 
         private void txtValorPago_Leave(object sender, EventArgs e)
         {
-            if (txtValorPago.Text.Contains(".") == false)
+            if (txtValorPago.Text.Contains(",") == false)
             {
-                txtValorPago.Text += ".00";
+                txtValorPago.Text += ",00";
             }
             else
             {
-                if (txtValorPago.Text.IndexOf(".") == txtValorPago.Text.Length -1)
+                if (txtValorPago.Text.IndexOf(",") == txtValorPago.Text.Length -1)
                 {
                     txtValorPago.Text += "00";
                 }
@@ -105,7 +105,7 @@ namespace GUI
             }
             catch
             {
-                txtValorPago.Text = "0.00";
+                txtValorPago.Text = "0,00";
             }
         }
 
@@ -117,9 +117,9 @@ namespace GUI
             }
             if (e.KeyChar == ',' || e.KeyChar == '.')
             {
-                if (!txtValorVenda.Text.Contains("."))
+                if (!txtValorVenda.Text.Contains(","))
                 {
-                    e.KeyChar = '.';
+                    e.KeyChar = ',';
                 }
                 else e.Handled = true;
             }
@@ -127,13 +127,13 @@ namespace GUI
 
         private void txtValorVenda_Leave(object sender, EventArgs e)
         {
-            if (txtValorVenda.Text.Contains(".") == false)
+            if (txtValorVenda.Text.Contains(",") == false)
             {
-                txtValorVenda.Text += ".00";
+                txtValorVenda.Text += ",00";
             }
             else
             {
-                if (txtValorVenda.Text.IndexOf(".") == txtValorVenda.Text.Length - 1)
+                if (txtValorVenda.Text.IndexOf(",") == txtValorVenda.Text.Length - 1)
                 {
                     txtValorVenda.Text += "00";
                 }
@@ -156,9 +156,9 @@ namespace GUI
             }
             if (e.KeyChar == ',' || e.KeyChar == '.')
             {
-                if (!txtQtde.Text.Contains("."))
+                if (!txtQtde.Text.Contains(","))
                 {
-                    e.KeyChar = '.';
+                    e.KeyChar = ',';
                 }
                 else e.Handled = true;
             }
@@ -166,13 +166,13 @@ namespace GUI
 
         private void txtQtde_Leave(object sender, EventArgs e)
         {
-            if (txtQtde.Text.Contains(".") == false)
+            if (txtQtde.Text.Contains(",") == false)
             {
-                txtQtde.Text += ".00";
+                txtQtde.Text += ",00";
             }
             else
             {
-                if (txtQtde.Text.IndexOf(".") == txtQtde.Text.Length - 1)
+                if (txtQtde.Text.IndexOf(",") == txtQtde.Text.Length - 1)
                 {
                     txtQtde.Text += "00";
                 }
@@ -183,7 +183,7 @@ namespace GUI
             }
             catch
             {
-                txtQtde.Text = "0.00";
+                txtQtde.Text = "0,00";
             }
         }
 
