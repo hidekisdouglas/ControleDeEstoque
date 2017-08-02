@@ -28,6 +28,8 @@ namespace GUI
             txtQtde.Clear();
             txtValorPago.Clear();
             txtValorVenda.Clear();
+            this.foto = "";
+            picFoto.Image = null;
             
         }
 
@@ -227,6 +229,15 @@ namespace GUI
                 //leitura de dados
                 ModeloProduto modelo = new ModeloProduto();
                 modelo.ProNome = txtProduto.Text;
+                modelo.ProDescricao = txtDescricao.Text;
+                modelo.ProValorPago = Convert.ToDouble(txtValorPago.Text);
+                modelo.ProValorVenda = Convert.ToDouble(txtValorVenda.Text);
+                modelo.ProQtde = Convert.ToDouble(txtQtde.Text);
+                modelo.UmedCod = Convert.ToInt32(cbUnidadeDeMedida.SelectedValue);
+                modelo.CatCod = Convert.ToInt32(cbCategoria.SelectedValue);
+                modelo.ScatCod = Convert.ToInt32(cbSubCategoria.SelectedValue);
+                modelo.CarregaImagem(this.foto);
+
                 // obj para gravar os dados no banco
                 DALConexao cx = new DALConexao(DadosDaConexao.StringDeConexao);
                 BLLProduto bll = new BLLProduto(cx);

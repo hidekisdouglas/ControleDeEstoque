@@ -22,35 +22,35 @@ namespace Modelo
             this.CatCod = 0;
             this.ScatCod = 0;
         }
-        public ModeloProduto(int _pro_cod, String _pro_nome, String _pro_descricao, String _pro_foto, Double _pro_valorpago, Double _pro_valorvenda,
-           Double _pro_qtde, int _umed_cod, int _cat_cod, int _scat_cod)
+        public ModeloProduto(int pro_cod, String pro_nome, String pro_descricao, String pro_foto, Double pro_valorpago, Double pro_valorvenda,
+           Double pro_qtde, int umed_cod, int cat_cod, int scat_cod)
         {
-            this.ProCod = _pro_cod;
-            this.ProNome = _pro_nome;
-            this.ProDescricao = _pro_descricao;
-            this.CarregaImagem(_pro_foto);
-            this.ProValorPago = _pro_valorpago;
-            this.ProValorVenda = _pro_valorvenda;
-            this.ProQtde = _pro_qtde;
-            this.UmedCod = _umed_cod;
-            this.CatCod = _cat_cod;
-            this.ScatCod = _scat_cod;
+            this.ProCod = pro_cod;
+            this.ProNome = pro_nome;
+            this.ProDescricao = pro_descricao;
+            this.CarregaImagem(pro_foto);
+            this.ProValorPago = pro_valorpago;
+            this.ProValorVenda = pro_valorvenda;
+            this.ProQtde = pro_qtde;
+            this.UmedCod = umed_cod;
+            this.CatCod = cat_cod;
+            this.ScatCod = scat_cod;
         }
 
 
-        public ModeloProduto(int _pro_cod, String _pro_nome, String _pro_descricao, byte[] _pro_foto, Double _pro_valorpago, Double _pro_valorvenda, 
-            Double _pro_qtde, int _umed_cod, int _cat_cod, int _scat_cod)
+        public ModeloProduto(int pro_cod, String pro_nome, String pro_descricao, Byte[] pro_foto, Double pro_valorpago, Double pro_valorvenda, 
+            Double pro_qtde, int umed_cod, int cat_cod, int scat_cod)
         {
-            this.ProCod = _pro_cod;
-            this.ProNome = _pro_nome;
-            this.ProDescricao = _pro_descricao;
-            this.ProFoto = _pro_foto;
-            this.ProValorPago = _pro_valorpago;
-            this.ProValorVenda = _pro_valorvenda;
-            this.ProQtde = _pro_qtde;
-            this.UmedCod = _umed_cod;
-            this.CatCod = _cat_cod;
-            this.ScatCod = _scat_cod;
+            this.ProCod = pro_cod;
+            this.ProNome = pro_nome;
+            this.ProDescricao = pro_descricao;
+            this.ProFoto = pro_foto;
+            this.ProValorPago = pro_valorpago;
+            this.ProValorVenda = pro_valorvenda;
+            this.ProQtde = pro_qtde;
+            this.UmedCod = umed_cod;
+            this.CatCod = cat_cod;
+            this.ScatCod = scat_cod;
         }
 
         private int _pro_cod;
