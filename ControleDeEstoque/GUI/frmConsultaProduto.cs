@@ -10,10 +10,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
 namespace GUI
 {
     public partial class frmConsultaProduto : Form
     {
+        public int codigo = 0;
+
         public frmConsultaProduto()
         {
             InitializeComponent();
@@ -53,6 +56,19 @@ namespace GUI
             dgvDados.Columns[8].Width = 150;
             dgvDados.Columns[9].HeaderText = "Subcatogria";
             dgvDados.Columns[9].Width = 150;
+
+            // ocultar colunas
+            //dgvDados.Columns["pro_foto"].Visible = false;
+        }
+
+        private void dgvDados_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            //Seleção de toda a linha da tabela
+            if (e.RowIndex >= 0)
+            {
+                this.codigo = Convert.ToInt32(dgvDados.Rows[e.RowIndex].Cells[0].Value);
+                this.Close();
+            }
         }
     }
 }

@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Text;
 using System.Windows.Forms;
 
@@ -267,7 +268,7 @@ namespace GUI
 
         private void btLocalizar_Click(object sender, EventArgs e)
         {
-            frmConsultaCategoria f = new frmConsultaCategoria();
+            frmConsultaProduto f = new frmConsultaProduto();
             // obj para gravar os dados no banco
             DALConexao cx = new DALConexao(DadosDaConexao.StringDeConexao);
             BLLProduto bll = new BLLProduto(cx);
@@ -277,8 +278,23 @@ namespace GUI
             if (f.codigo != 0)
             {
                 ModeloProduto modelo = bll.CarregarModeloProduto(f.codigo);
+                //exibir os dados na tela
                 txtCodigo.Text = modelo.ProCod.ToString();
                 txtProduto.Text = modelo.ProNome;
+                txtDescricao.Text = modelo.ProDescricao;
+                txtQtde.Text = modelo.ProQtde.ToString();
+                txtValorPago.Text = modelo.ProValorPago.ToString();
+                txtValorVenda.Text = modelo.ProValorVenda.ToString();
+                cbCategoria.SelectedValue = modelo.CatCod;
+                cbSubCategoria.SelectedValue = modelo.ScatCod;
+                cbUnidadeDeMedida.SelectedValue = modelo.UmedCod;
+                try
+                {
+                    MemoryStream ms = new MemoryStream(modelo.ProFoto);
+                    picFoto.Image = Image.FromStream(ms);
+                }
+                catch { }
+                
                 alteraBotoes(3);
             }
             else

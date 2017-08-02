@@ -27,7 +27,7 @@ namespace DAL
                 " values (@nome, @descricao, @foto, @valorpago, @valorvenda, @qtde, @umedcod, @catcod, @scatcod); select @@IDENTITY;";
             cmd.Parameters.AddWithValue("@nome", modelo.ProNome);
             cmd.Parameters.AddWithValue("@descricao", modelo.ProDescricao);
-            cmd.Parameters.Add("@foto", System.Data.SqlDbType.Image);
+            cmd.Parameters.Add("@foto", SqlDbType.Image);
             if (modelo.ProFoto == null)
             {
                 cmd.Parameters["@foto"].Value = DBNull.Value;
@@ -57,7 +57,7 @@ namespace DAL
                 " umed_cod = @umedcod, cat_cod = @catcod, scat_cod =  @scatcod  where pro_cod = @codigo";
             cmd.Parameters.AddWithValue("@nome", modelo.ProNome);
             cmd.Parameters.AddWithValue("@descricao", modelo.ProDescricao);
-            cmd.Parameters.AddWithValue("@foto", System.Data.SqlDbType.Image);
+            cmd.Parameters.Add("@foto", SqlDbType.Image);
             if (modelo.ProFoto == null)
             {
                 cmd.Parameters["@foto"].Value = DBNull.Value;
@@ -69,7 +69,7 @@ namespace DAL
             cmd.Parameters.AddWithValue("@valorpago", modelo.ProValorPago);
             cmd.Parameters.AddWithValue("@valorvenda", modelo.ProValorVenda);
             cmd.Parameters.AddWithValue("@qtde", modelo.ProQtde);
-            cmd.Parameters.AddWithValue("@umecod", modelo.UmedCod);
+            cmd.Parameters.AddWithValue("@umedcod", modelo.UmedCod);
             cmd.Parameters.AddWithValue("@catcod", modelo.CatCod);
             cmd.Parameters.AddWithValue("@scatcod", modelo.ScatCod);
             cmd.Parameters.AddWithValue("@codigo", modelo.ProCod);

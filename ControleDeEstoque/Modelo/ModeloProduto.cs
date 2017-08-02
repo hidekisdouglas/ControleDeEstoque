@@ -82,11 +82,12 @@ namespace Modelo
             try
             {
                 if (string.IsNullOrEmpty(imgCaminho))
-                {
                     return;
+                   
                     //fornece propiedades e metodos de instacia para criar, copiar
                     //excluir, mover, abrir arquivos e ajuda na criação de objetos FileStream
                     FileInfo arqImagem = new FileInfo(imgCaminho);
+
                     //expoe um stream ao redor de um arquivo suporte
                     //sincrono e assincrono operarções de leitura e gravação.
                     FileStream fs = new FileStream(imgCaminho, FileMode.Open, FileAccess.Read, FileShare.Read);
@@ -95,7 +96,7 @@ namespace Modelo
                     // lê um bloque de bytes do fluxo e grava os dados em um buffer fornecido
                     int iByteRead = fs.Read(this.ProFoto, 0, Convert.ToInt32(arqImagem.Length));
                     fs.Close();
-                }
+                
             }
             catch(Exception ex)
             {

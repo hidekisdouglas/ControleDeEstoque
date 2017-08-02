@@ -46,23 +46,23 @@
             this.cbUnidadeDeMedida = new System.Windows.Forms.ComboBox();
             this.cbCategoria = new System.Windows.Forms.ComboBox();
             this.cbSubCategoria = new System.Windows.Forms.ComboBox();
-            this.pnFoto = new System.Windows.Forms.Panel();
-            this.picFoto = new System.Windows.Forms.PictureBox();
             this.label10 = new System.Windows.Forms.Label();
             this.btCarregar = new System.Windows.Forms.Button();
             this.btRemover = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.picFoto = new System.Windows.Forms.PictureBox();
             this.pnDados.SuspendLayout();
             this.pnBotoes.SuspendLayout();
-            this.pnFoto.SuspendLayout();
+            this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picFoto)).BeginInit();
             this.SuspendLayout();
             // 
             // pnDados
             // 
+            this.pnDados.Controls.Add(this.panel1);
             this.pnDados.Controls.Add(this.btRemover);
             this.pnDados.Controls.Add(this.btCarregar);
             this.pnDados.Controls.Add(this.label10);
-            this.pnDados.Controls.Add(this.pnFoto);
             this.pnDados.Controls.Add(this.cbSubCategoria);
             this.pnDados.Controls.Add(this.cbCategoria);
             this.pnDados.Controls.Add(this.cbUnidadeDeMedida);
@@ -270,25 +270,6 @@
             this.cbSubCategoria.Size = new System.Drawing.Size(178, 21);
             this.cbSubCategoria.TabIndex = 17;
             // 
-            // pnFoto
-            // 
-            this.pnFoto.Controls.Add(this.picFoto);
-            this.pnFoto.Location = new System.Drawing.Point(430, 21);
-            this.pnFoto.Name = "pnFoto";
-            this.pnFoto.Size = new System.Drawing.Size(315, 342);
-            this.pnFoto.TabIndex = 18;
-            // 
-            // picFoto
-            // 
-            this.picFoto.BackColor = System.Drawing.Color.Silver;
-            this.picFoto.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.picFoto.Location = new System.Drawing.Point(0, 0);
-            this.picFoto.Name = "picFoto";
-            this.picFoto.Size = new System.Drawing.Size(315, 342);
-            this.picFoto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picFoto.TabIndex = 0;
-            this.picFoto.TabStop = false;
-            // 
             // label10
             // 
             this.label10.AutoSize = true;
@@ -325,6 +306,24 @@
             this.btRemover.UseVisualStyleBackColor = false;
             this.btRemover.Click += new System.EventHandler(this.btRemover_Click);
             // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.picFoto);
+            this.panel1.Location = new System.Drawing.Point(430, 20);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(315, 342);
+            this.panel1.TabIndex = 22;
+            // 
+            // picFoto
+            // 
+            this.picFoto.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.picFoto.Location = new System.Drawing.Point(0, 0);
+            this.picFoto.Name = "picFoto";
+            this.picFoto.Size = new System.Drawing.Size(315, 342);
+            this.picFoto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picFoto.TabIndex = 0;
+            this.picFoto.TabStop = false;
+            // 
             // frmProduto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -335,7 +334,7 @@
             this.pnDados.ResumeLayout(false);
             this.pnDados.PerformLayout();
             this.pnBotoes.ResumeLayout(false);
-            this.pnFoto.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.picFoto)).EndInit();
             this.ResumeLayout(false);
 
@@ -364,7 +363,7 @@
         private System.Windows.Forms.Button btRemover;
         private System.Windows.Forms.Button btCarregar;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Panel pnFoto;
+        private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.PictureBox picFoto;
     }
 }
