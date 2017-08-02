@@ -45,6 +45,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="frmBackupBD.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmBackupBD.Designer.cs">
+      <DependentUpon>frmBackupBD.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmConfiguracaoBancoDados.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -113,6 +119,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="frmBackupBD.resx">
+      <DependentUpon>frmBackupBD.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmConfiguracaoBancoDados.resx">
       <DependentUpon>frmConfiguracaoBancoDados.cs</DependentUpon>
     </EmbeddedResource>
