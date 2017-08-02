@@ -112,6 +112,7 @@
             this.btSalvar.TabIndex = 8;
             this.btSalvar.Text = "Salvar";
             this.btSalvar.UseVisualStyleBackColor = true;
+            this.btSalvar.Click += new System.EventHandler(this.btSalvar_Click);
             // 
             // frmConfiguracaoBancoDados
             // 
@@ -130,6 +131,7 @@
             this.Name = "frmConfiguracaoBancoDados";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Configuracao do banco de dados";
+            this.Load += new System.EventHandler(this.frmConfiguracaoBancoDados_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
