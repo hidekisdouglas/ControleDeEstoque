@@ -43,6 +43,7 @@
             this.label1.Size = new System.Drawing.Size(52, 13);
             this.label1.TabIndex = 0;
             this.label1.Text = "Categoria";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // txtValor
             // 
@@ -50,6 +51,7 @@
             this.txtValor.Name = "txtValor";
             this.txtValor.Size = new System.Drawing.Size(431, 20);
             this.txtValor.TabIndex = 1;
+            this.txtValor.TextChanged += new System.EventHandler(this.txtValor_TextChanged);
             // 
             // btLocalizar
             // 
@@ -72,6 +74,7 @@
             this.dgvDados.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvDados.Size = new System.Drawing.Size(760, 430);
             this.dgvDados.TabIndex = 3;
+            this.dgvDados.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDados_CellContentClick);
             this.dgvDados.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDados_CellDoubleClick);
             // 
             // frmConsultaCategoria

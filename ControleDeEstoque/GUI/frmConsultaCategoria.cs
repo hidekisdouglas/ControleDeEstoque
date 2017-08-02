@@ -48,5 +48,20 @@ namespace GUI
                 this.Close();
             }
         }
+
+        private void dgvDados_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void txtValor_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
