@@ -44,23 +44,5 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SQLServerBackup.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\BBL\BLL.csproj">
-      <Project>{62b77fb9-5921-4fe0-8b2e-1716095a2e0c}</Project>
-      <Name>BLL</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\DAL\DAL.csproj">
-      <Project>{fbb74d36-9d53-47e7-9e2e-b3e010b08691}</Project>
-      <Name>DAL</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\GUI\GUI.csproj">
-      <Project>{b4c017fc-1adb-4b07-9d54-43d32cb00a6f}</Project>
-      <Name>GUI</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Modelo\Modelo.csproj">
-      <Project>{814583a1-aff0-4a41-b47a-a78523c92b70}</Project>
-      <Name>Modelo</Name>
-    </ProjectReference>
-  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
