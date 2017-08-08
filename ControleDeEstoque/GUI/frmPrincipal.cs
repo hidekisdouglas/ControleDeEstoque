@@ -131,5 +131,13 @@ namespace GUI
             f.ShowDialog();
             f.Dispose();
         }
+
+        private void tipoDePagamentoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmCadastroTipoPagamento f = new frmCadastroTipoPagamento();
+            f.ShowDialog();
+            f.Dispose();
+
+        }
     }
 }

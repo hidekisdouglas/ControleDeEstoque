@@ -46,6 +46,7 @@
             this.dgvDados.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvDados.Size = new System.Drawing.Size(760, 430);
             this.dgvDados.TabIndex = 7;
+            this.dgvDados.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDados_CellDoubleClick);
             // 
             // btLocalizar
             // 
@@ -55,6 +56,7 @@
             this.btLocalizar.TabIndex = 6;
             this.btLocalizar.Text = "Localizar";
             this.btLocalizar.UseVisualStyleBackColor = true;
+            this.btLocalizar.Click += new System.EventHandler(this.btLocalizar_Click);
             // 
             // txtValor
             // 
@@ -84,6 +86,7 @@
             this.Name = "frmConsultaTipoPagamento";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Consulta tipo de pagamento";
+            this.Load += new System.EventHandler(this.frmConsultaTipoPagamento_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvDados)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

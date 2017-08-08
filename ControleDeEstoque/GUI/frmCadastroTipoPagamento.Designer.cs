@@ -93,11 +93,11 @@
             // 
             // txtCod
             // 
+            this.txtCod.Enabled = false;
             this.txtCod.Location = new System.Drawing.Point(16, 35);
             this.txtCod.Name = "txtCod";
             this.txtCod.Size = new System.Drawing.Size(100, 20);
             this.txtCod.TabIndex = 2;
-            this.txtCod.Visible = false;
             // 
             // txtNome
             // 

@@ -13,13 +13,14 @@ namespace GUI
 {
     public partial class frmCadastroTipoPagamento : GUI.frmModeloDeFormularioDeCadastro
     {
+        int codigo = 0;
         public frmCadastroTipoPagamento()
         {
             InitializeComponent();
         }
         public void limpaTela()
         {
-            txtCodigo.Clear();
+            txtCod.Clear();
             txtNome.Clear();
         }
 
