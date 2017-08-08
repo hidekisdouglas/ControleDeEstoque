@@ -37,9 +37,9 @@
             // btBackupBancoDeDados
             // 
             this.btBackupBancoDeDados.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btBackupBancoDeDados.Location = new System.Drawing.Point(122, 48);
+            this.btBackupBancoDeDados.Location = new System.Drawing.Point(12, 45);
             this.btBackupBancoDeDados.Name = "btBackupBancoDeDados";
-            this.btBackupBancoDeDados.Size = new System.Drawing.Size(242, 198);
+            this.btBackupBancoDeDados.Size = new System.Drawing.Size(760, 207);
             this.btBackupBancoDeDados.TabIndex = 0;
             this.btBackupBancoDeDados.Text = "Backup do banco de dados";
             this.btBackupBancoDeDados.UseVisualStyleBackColor = true;
@@ -48,7 +48,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(13, 35);
+            this.label1.Location = new System.Drawing.Point(292, 496);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(35, 13);
             this.label1.TabIndex = 1;
@@ -56,7 +56,7 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(16, 51);
+            this.textBox1.Location = new System.Drawing.Point(295, 512);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(100, 20);
             this.textBox1.TabIndex = 2;
@@ -64,11 +64,11 @@
             // button2
             // 
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(122, 267);
+            this.button2.Location = new System.Drawing.Point(12, 258);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(242, 207);
+            this.button2.Size = new System.Drawing.Size(760, 207);
             this.button2.TabIndex = 3;
-            this.button2.Text = "Restaurar Banco de Dados";
+            this.button2.Text = "Restaurar banco de dados";
             this.button2.UseVisualStyleBackColor = true;
             // 
             // frmBackupBD

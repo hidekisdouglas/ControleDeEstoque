@@ -49,13 +49,13 @@
             this.movimentaçãoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.relatórioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ferramentasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.sobreToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.configuraçãoDoBDToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.backupDoBDToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this.calculadoraToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.explorerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.blocoDeNotasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.sobreToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -225,12 +225,6 @@
             this.ferramentasToolStripMenuItem.Size = new System.Drawing.Size(84, 20);
             this.ferramentasToolStripMenuItem.Text = "Ferramentas";
             // 
-            // sobreToolStripMenuItem
-            // 
-            this.sobreToolStripMenuItem.Name = "sobreToolStripMenuItem";
-            this.sobreToolStripMenuItem.Size = new System.Drawing.Size(49, 20);
-            this.sobreToolStripMenuItem.Text = "Sobre";
-            // 
             // configuraçãoDoBDToolStripMenuItem
             // 
             this.configuraçãoDoBDToolStripMenuItem.Name = "configuraçãoDoBDToolStripMenuItem";
@@ -243,6 +237,7 @@
             this.backupDoBDToolStripMenuItem.Name = "backupDoBDToolStripMenuItem";
             this.backupDoBDToolStripMenuItem.Size = new System.Drawing.Size(181, 22);
             this.backupDoBDToolStripMenuItem.Text = "Backup do BD";
+            this.backupDoBDToolStripMenuItem.Click += new System.EventHandler(this.backupDoBDToolStripMenuItem_Click);
             // 
             // toolStripSeparator3
             // 
@@ -269,6 +264,12 @@
             this.blocoDeNotasToolStripMenuItem.Size = new System.Drawing.Size(181, 22);
             this.blocoDeNotasToolStripMenuItem.Text = "Bloco de notas";
             this.blocoDeNotasToolStripMenuItem.Click += new System.EventHandler(this.blocoDeNotasToolStripMenuItem_Click);
+            // 
+            // sobreToolStripMenuItem
+            // 
+            this.sobreToolStripMenuItem.Name = "sobreToolStripMenuItem";
+            this.sobreToolStripMenuItem.Size = new System.Drawing.Size(49, 20);
+            this.sobreToolStripMenuItem.Text = "Sobre";
             // 
             // frmPrincipal
             // 

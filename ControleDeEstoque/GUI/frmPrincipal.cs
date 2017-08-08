@@ -124,5 +124,12 @@ namespace GUI
                 MessageBox.Show(er.Message);
             }
         }
+
+        private void backupDoBDToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmBackupBD f = new frmBackupBD();
+            f.ShowDialog();
+            f.Dispose();
+        }
     }
 }

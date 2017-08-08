@@ -21,15 +21,23 @@ namespace GUI
 
         private void btBackupBancoDeDados_Click(object sender, EventArgs e)
         {
-            SaveFileDialog d = new SaveFileDialog();
-            d.Filter = "Backup Files |*.bak";
-            d.ShowDialog();
-            if (d.FileName != "")
+            try
             {
-                String nomeBanco = DadosDaConexao.banco;
-                String localBackup = d.FileName;
-                String conexao = @"Data Source=" + DadosDaConexao.servidor + "; Initial Catolog=master;User=" + DadosDaConexao.usuario + ";Password=" + DadosDaConexao.senha;
-                SQLServerBackup.BackupDataBase(conexao, nomeBanco, localBackup);
+                SaveFileDialog d = new SaveFileDialog();
+                d.Filter = "Backup Files |*.bak";
+                d.ShowDialog();
+                if (d.FileName != "")
+                {
+                    String nomeBanco = DadosDaConexao.banco;
+                    String localBackup = d.FileName;
+                    String conexao = @"Data Source=" + DadosDaConexao.servidor + "; Initial Catolog=master;User=" + DadosDaConexao.usuario + ";Password=" + DadosDaConexao.senha;
+                    SQLServerBackup.BackupDataBase(conexao, nomeBanco, localBackup);
+                    MessageBox.Show("Backup realizado com sucesso!");
+                }
+            }
+            catch(Exception erro)
+            {
+                MessageBox.Show(erro.Message);
             }
         }
     }
