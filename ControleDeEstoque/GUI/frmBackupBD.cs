@@ -30,7 +30,7 @@ namespace GUI
                 {
                     String nomeBanco = DadosDaConexao.banco;
                     String localBackup = d.FileName;
-                    String conexao = @"Data Source=" + DadosDaConexao.servidor + "; Initial Catolog=master;User=" + DadosDaConexao.usuario + ";Password=" + DadosDaConexao.senha;
+                    String conexao = @"Data Source=" + DadosDaConexao.servidor + "; Initial Catalog=master;User=" + DadosDaConexao.usuario + ";Password=" + DadosDaConexao.senha;
                     SQLServerBackup.BackupDataBase(conexao, nomeBanco, localBackup);
                     MessageBox.Show("Backup realizado com sucesso!");
                 }
@@ -52,7 +52,7 @@ namespace GUI
                 {
                     String nomeBanco = DadosDaConexao.banco;
                     String localBackup = d.FileName;
-                    String conexao = @"Data Source=" + DadosDaConexao.servidor + "; Initial Catolog=master;" +
+                    String conexao = @"Data Source=" + DadosDaConexao.servidor + "; Initial Catalog=master;" +
                         "User=" + DadosDaConexao.usuario + ";Password=" + DadosDaConexao.senha;
                     SQLServerBackup.RestauraDatabase(conexao, nomeBanco, localBackup);
                     MessageBox.Show("Backup restaurado com sucesso!");

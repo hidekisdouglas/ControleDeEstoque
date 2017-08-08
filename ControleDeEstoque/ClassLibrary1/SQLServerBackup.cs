@@ -70,11 +70,15 @@ namespace Ferramentas
 
         public static void RestauraDatabase(String ConnString, string nomeDB, string backupFile)
         {
+            SqlConnection.ClearAllPools();
             SqlConnection cn = new SqlConnection(ConnString);
             //criou o comando
             SqlCommand cm = new SqlCommand();
             cm.Connection = cn;
-            string sql = "RESTORE DATABASE [" + nomeDB + "] FROM DISK = '" + backupFile + "'  WITH REPLACE";
+            string sql = "ALTER DATABASE [" + nomeDB + "] SET OFFLINE WITH ROLLBACK IMMEDIATE; " +
+                "RESTORE DATABASE [" + nomeDB + "] FROM DISK = '" + backupFile + "'  WITH REPLACE;" +
+                "ALTER DATABASE [" + nomeDB + "] SET ONLINE WITH ROLLBACK IMMEDIATE";
+            
             cm.CommandText = sql;
             try
             {
