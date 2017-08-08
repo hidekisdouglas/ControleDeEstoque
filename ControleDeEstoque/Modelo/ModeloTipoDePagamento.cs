@@ -6,17 +6,17 @@ using System.Threading.Tasks;
 
 namespace Modelo
 {
-    class ModeloTipoDePagamento
+    public class ModeloTipoDePagamento
     {
         public ModeloTipoDePagamento()
         {
             this.TpaCod = 0;
-            this.TpatNome = "";
+            this.TpaNome = "";
         }
         public ModeloTipoDePagamento(int tpacod, string tpanome)
         {
             this.TpaCod = tpacod;
-            this.TpatNome = tpa_nome;
+            this.TpaNome = tpa_nome;
         }
 
         private int tpa_cod;
@@ -26,7 +26,7 @@ namespace Modelo
             set { this.tpa_cod = value; }
         }
         private String tpa_nome;
-        public String TpatNome
+        public String TpaNome
         {
             get { return this.tpa_nome; }
             set { this.tpa_nome = value; }
