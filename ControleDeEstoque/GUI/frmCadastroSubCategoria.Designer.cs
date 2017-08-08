@@ -34,12 +34,14 @@
             this.label3 = new System.Windows.Forms.Label();
             this.txtSCod = new System.Windows.Forms.TextBox();
             this.txtNomeSubcategoria = new System.Windows.Forms.TextBox();
+            this.btAdd = new System.Windows.Forms.Button();
             this.pnDados.SuspendLayout();
             this.pnBotoes.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnDados
             // 
+            this.pnDados.Controls.Add(this.btAdd);
             this.pnDados.Controls.Add(this.txtNomeSubcategoria);
             this.pnDados.Controls.Add(this.txtSCod);
             this.pnDados.Controls.Add(this.label3);
@@ -127,6 +129,16 @@
             this.txtNomeSubcategoria.Size = new System.Drawing.Size(339, 20);
             this.txtNomeSubcategoria.TabIndex = 5;
             // 
+            // btAdd
+            // 
+            this.btAdd.Location = new System.Drawing.Point(361, 118);
+            this.btAdd.Name = "btAdd";
+            this.btAdd.Size = new System.Drawing.Size(75, 23);
+            this.btAdd.TabIndex = 6;
+            this.btAdd.Text = "+";
+            this.btAdd.UseVisualStyleBackColor = true;
+            this.btAdd.Click += new System.EventHandler(this.btAdd_Click);
+            // 
             // frmCadastroSubCategoria
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -149,5 +161,6 @@
         private System.Windows.Forms.ComboBox cbNomeCategoria;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button btAdd;
     }
 }

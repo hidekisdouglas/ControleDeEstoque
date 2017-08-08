@@ -135,5 +135,18 @@ namespace GUI
             }
             f.Dispose();
         }
+
+        private void btAdd_Click(object sender, EventArgs e)
+        {
+            frmCadastroCategoria f = new frmCadastroCategoria();
+            f.ShowDialog();
+            f.Dispose();
+            //carrega as categorias atualizadas
+            DALConexao cx = new DALConexao(DadosDaConexao.StringDeConexao);
+            BLLCategoria bll = new BLLCategoria(cx);
+            cbNomeCategoria.DataSource = bll.Localizar("");
+            cbNomeCategoria.DisplayMember = "cat_nome";
+            cbNomeCategoria.ValueMember = "cat_cod";
+        }
     }
 }
