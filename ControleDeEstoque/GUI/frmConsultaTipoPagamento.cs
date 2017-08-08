@@ -28,7 +28,7 @@ namespace GUI
             //troca o header da tabela
             dgvDados.Columns[0].HeaderText = "Código";
             dgvDados.Columns[0].Width = 70;
-            dgvDados.Columns[1].HeaderText = "Categoria";
+            dgvDados.Columns[1].HeaderText = "Tipo de Pagamento";
             dgvDados.Columns[1].Width = 630;
 
         }
@@ -48,6 +48,11 @@ namespace GUI
                 this.codigo = Convert.ToInt32(dgvDados.Rows[e.RowIndex].Cells[0].Value);
                 this.Close();
             }
+        }
+
+        private void dgvDados_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }
