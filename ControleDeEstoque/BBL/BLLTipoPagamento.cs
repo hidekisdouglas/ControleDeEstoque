@@ -52,7 +52,7 @@ namespace BLL
             DALTipoPagamento DALobj = new DALTipoPagamento(conexao);
             return DALobj.Localizar(valor);
         }
-        public ModeloTipoDePagamento CarregarModeloCategoria(int codigo)
+        public ModeloTipoDePagamento CarregarModeloTipoPagamento(int codigo)
         {
             DALTipoPagamento DALobj = new DALTipoPagamento(conexao);
             return DALobj.CarregaModeloTipoPagamento(codigo);
