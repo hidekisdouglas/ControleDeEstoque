@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace BLL
 {
-    class BLLTipoPagamento
+    public class BLLTipoPagamento
     {
         private DALConexao conexao;
 
