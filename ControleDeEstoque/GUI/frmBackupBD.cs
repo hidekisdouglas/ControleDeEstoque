@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Ferramentas;
 
 namespace GUI
 {
@@ -25,8 +26,10 @@ namespace GUI
             d.ShowDialog();
             if (d.FileName != "")
             {
-                string nomeBanco = DadosDaConexao.banco;
+                String nomeBanco = DadosDaConexao.banco;
+                String localBackup = d.FileName;
                 String conexao = @"Data Source=" + DadosDaConexao.servidor + "; Initial Catolog=master;User=" + DadosDaConexao.usuario + ";Password=" + DadosDaConexao.senha;
+                SQLServerBackup.BackupDataBase(conexao, nomeBanco, localBackup);
             }
         }
     }
