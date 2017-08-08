@@ -51,6 +51,10 @@
             this.btRemover = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.picFoto = new System.Windows.Forms.PictureBox();
+            this.btAddCategoria = new System.Windows.Forms.Button();
+            this.btAddUnidMedida = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.btAddSubCat = new System.Windows.Forms.Button();
             this.pnDados.SuspendLayout();
             this.pnBotoes.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -59,6 +63,9 @@
             // 
             // pnDados
             // 
+            this.pnDados.Controls.Add(this.btAddSubCat);
+            this.pnDados.Controls.Add(this.btAddUnidMedida);
+            this.pnDados.Controls.Add(this.btAddCategoria);
             this.pnDados.Controls.Add(this.panel1);
             this.pnDados.Controls.Add(this.btRemover);
             this.pnDados.Controls.Add(this.btCarregar);
@@ -220,7 +227,7 @@
             // 
             this.txtValorPago.Location = new System.Drawing.Point(13, 244);
             this.txtValorPago.Name = "txtValorPago";
-            this.txtValorPago.Size = new System.Drawing.Size(171, 20);
+            this.txtValorPago.Size = new System.Drawing.Size(175, 20);
             this.txtValorPago.TabIndex = 12;
             this.txtValorPago.Text = "0.00";
             this.txtValorPago.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtValorPago_KeyPress);
@@ -240,7 +247,7 @@
             // 
             this.txtQtde.Location = new System.Drawing.Point(16, 292);
             this.txtQtde.Name = "txtQtde";
-            this.txtQtde.Size = new System.Drawing.Size(168, 20);
+            this.txtQtde.Size = new System.Drawing.Size(172, 20);
             this.txtQtde.TabIndex = 14;
             this.txtQtde.Text = "0.00";
             this.txtQtde.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtQtde_KeyPress);
@@ -251,7 +258,7 @@
             this.cbUnidadeDeMedida.FormattingEnabled = true;
             this.cbUnidadeDeMedida.Location = new System.Drawing.Point(216, 291);
             this.cbUnidadeDeMedida.Name = "cbUnidadeDeMedida";
-            this.cbUnidadeDeMedida.Size = new System.Drawing.Size(178, 21);
+            this.cbUnidadeDeMedida.Size = new System.Drawing.Size(146, 21);
             this.cbUnidadeDeMedida.TabIndex = 15;
             // 
             // cbCategoria
@@ -259,7 +266,7 @@
             this.cbCategoria.FormattingEnabled = true;
             this.cbCategoria.Location = new System.Drawing.Point(13, 341);
             this.cbCategoria.Name = "cbCategoria";
-            this.cbCategoria.Size = new System.Drawing.Size(171, 21);
+            this.cbCategoria.Size = new System.Drawing.Size(139, 21);
             this.cbCategoria.TabIndex = 16;
             this.cbCategoria.SelectedIndexChanged += new System.EventHandler(this.cbCategoria_SelectedIndexChanged);
             // 
@@ -268,7 +275,7 @@
             this.cbSubCategoria.FormattingEnabled = true;
             this.cbSubCategoria.Location = new System.Drawing.Point(216, 341);
             this.cbSubCategoria.Name = "cbSubCategoria";
-            this.cbSubCategoria.Size = new System.Drawing.Size(178, 21);
+            this.cbSubCategoria.Size = new System.Drawing.Size(146, 21);
             this.cbSubCategoria.TabIndex = 17;
             // 
             // label10
@@ -309,6 +316,7 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.picFoto);
             this.panel1.Location = new System.Drawing.Point(430, 20);
             this.panel1.Name = "panel1";
@@ -325,6 +333,45 @@
             this.picFoto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picFoto.TabIndex = 0;
             this.picFoto.TabStop = false;
+            // 
+            // btAddCategoria
+            // 
+            this.btAddCategoria.Location = new System.Drawing.Point(159, 341);
+            this.btAddCategoria.Name = "btAddCategoria";
+            this.btAddCategoria.Size = new System.Drawing.Size(29, 23);
+            this.btAddCategoria.TabIndex = 23;
+            this.btAddCategoria.Text = "+";
+            this.btAddCategoria.UseVisualStyleBackColor = true;
+            this.btAddCategoria.Click += new System.EventHandler(this.btAddCategoria_Click);
+            // 
+            // btAddUnidMedida
+            // 
+            this.btAddUnidMedida.Location = new System.Drawing.Point(369, 291);
+            this.btAddUnidMedida.Name = "btAddUnidMedida";
+            this.btAddUnidMedida.Size = new System.Drawing.Size(25, 23);
+            this.btAddUnidMedida.TabIndex = 24;
+            this.btAddUnidMedida.Text = "+";
+            this.btAddUnidMedida.UseVisualStyleBackColor = true;
+            this.btAddUnidMedida.Click += new System.EventHandler(this.btAddUnidMedida_Click);
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(-62, 321);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(26, 23);
+            this.button1.TabIndex = 25;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // btAddSubCat
+            // 
+            this.btAddSubCat.Location = new System.Drawing.Point(369, 341);
+            this.btAddSubCat.Name = "btAddSubCat";
+            this.btAddSubCat.Size = new System.Drawing.Size(25, 23);
+            this.btAddSubCat.TabIndex = 25;
+            this.btAddSubCat.Text = "+";
+            this.btAddSubCat.UseVisualStyleBackColor = true;
+            this.btAddSubCat.Click += new System.EventHandler(this.btAddSubCat_Click);
             // 
             // frmProduto
             // 
@@ -367,5 +414,9 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.PictureBox picFoto;
+        private System.Windows.Forms.Button btAddSubCat;
+        private System.Windows.Forms.Button btAddUnidMedida;
+        private System.Windows.Forms.Button btAddCategoria;
+        private System.Windows.Forms.Button button1;
     }
 }

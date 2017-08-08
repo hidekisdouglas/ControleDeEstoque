@@ -352,5 +352,56 @@ namespace GUI
             this.foto = "";
             picFoto.Image = null;
         }
+
+        private void btAddCategoria_Click(object sender, EventArgs e)
+        {
+            frmCadastroCategoria f = new frmCadastroCategoria();
+            f.ShowDialog();
+            f.Dispose();
+            //criar conexão para exibir no combobox os nomes da categoria
+            DALConexao cx = new DALConexao(DadosDaConexao.StringDeConexao);
+            BLLCategoria bll = new BLLCategoria(cx);
+            cbCategoria.DataSource = bll.Localizar("");
+            cbCategoria.DisplayMember = "cat_nome";
+            cbCategoria.ValueMember = "cat_cod";
+            try
+            {
+                //criar conexão para exibir no combobox os nomes da subcategoria
+                BLLSubcategoria sbll = new BLLSubcategoria(cx);
+                cbSubCategoria.DataSource = sbll.LocalizaPorCategoria((int)cbCategoria.SelectedValue);
+                cbSubCategoria.DisplayMember = "scat_nome";
+                cbSubCategoria.ValueMember = "scat_cod";
+            }
+            catch
+            {
+                MessageBox.Show("Cadastre uma cegoria");
+            }
+        }
+
+        private void btAddSubCat_Click(object sender, EventArgs e)
+        {
+            frmCadastroSubCategoria f = new frmCadastroSubCategoria();
+            f.ShowDialog();
+            f.Dispose();
+            //criar conexão para exibir no combobox os nomes da subcategoria
+            DALConexao cx = new DALConexao(DadosDaConexao.StringDeConexao);
+            BLLSubcategoria sbll = new BLLSubcategoria(cx);
+            cbSubCategoria.DataSource = sbll.LocalizaPorCategoria((int)cbCategoria.SelectedValue);
+            cbSubCategoria.DisplayMember = "scat_nome";
+            cbSubCategoria.ValueMember = "scat_cod";
+        }
+
+        private void btAddUnidMedida_Click(object sender, EventArgs e)
+        {
+            frmCadastroUnidadeDeMedida f = new frmCadastroUnidadeDeMedida();
+            f.ShowDialog();
+            f.Dispose();
+            //criar conexão para exibir no combobox os nomes da unidade de medidas
+            DALConexao cx = new DALConexao(DadosDaConexao.StringDeConexao);
+            BLLUnidadeDeMedida ubll = new BLLUnidadeDeMedida(cx);
+            cbUnidadeDeMedida.DataSource = ubll.Localizar("");
+            cbUnidadeDeMedida.DisplayMember = "umed_nome";
+            cbUnidadeDeMedida.ValueMember = "umed_cod";
+        }
     }
 }
