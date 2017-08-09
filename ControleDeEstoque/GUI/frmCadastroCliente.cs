@@ -8,6 +8,7 @@ using System.Data;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
+using Ferramentas;
 
 namespace GUI
 {
@@ -158,6 +159,17 @@ namespace GUI
                 txtRazaoSocial.Visible = true;
                 lbCpfCnpj.Text = "CNPJ";
                 lbRgIe.Text = "I.E";
+            }
+        }
+
+        private void txtCep_Leave(object sender, EventArgs e)
+        {
+            if (BuscaEndereco.verificaCEP(txtCep.Text) == true)
+            {
+                txtBairro.Text = BuscaEndereco.bairro;
+                txtEstado.Text = BuscaEndereco.estado;
+                txtCidade.Text = BuscaEndereco.cidade;
+                txtEnd.Text = BuscaEndereco.endereco;
             }
         }
     }
