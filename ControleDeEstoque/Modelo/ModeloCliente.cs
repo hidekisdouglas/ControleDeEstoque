@@ -16,7 +16,7 @@ namespace Modelo
             this.CliCpfCnpj = "";
             this.CliRgIe = "";
             this.CliRsocial = "";
-            this.CliTipo = 0; //clitipo 0 -> pessoa fisica | clitipo -> 1 é uma pessoa juridica
+            this.CliTipo = ""; //clitipo 0 -> pessoa fisica | clitipo -> 1 é uma pessoa juridica
             this.CliCep = "";
             this.CliEndereco = "";
             this.CliEndNumero = "";
@@ -27,7 +27,7 @@ namespace Modelo
             this.CliCidade = "";
             this.CliEstado = "";
         }
-        public ModeloCliente(int cod, string nome, string cpfcnpj, string rgie, string rsocial, int tipo, string cep, string endereco, string endnumero, string bairro,
+        public ModeloCliente(int cod, string nome, string cpfcnpj, string rgie, string rsocial, string tipo, string cep, string endereco, string endnumero, string bairro,
            string fone, string cel, string email, string cidade, string estado )
         {
             this.CliCod = cod;
@@ -78,8 +78,8 @@ namespace Modelo
             get { return this.cli_rsocial; }
             set { this.cli_rsocial = value; }
         }
-        private int cli_tipo;
-        public int CliTipo
+        private string cli_tipo;
+        public string CliTipo
         {
             get { return this.cli_tipo; }
             set { this.cli_tipo = value; }

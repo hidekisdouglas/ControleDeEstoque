@@ -75,10 +75,15 @@ namespace BLL
             DALCliente DALobj = new DALCliente(conexao);
             DALobj.Excluir(codigo);
         }
-        public DataTable Localizar(String valor)
+        public DataTable LocalizarNome(String valor)
         {
             DALCliente DALobj = new DALCliente(conexao);
             return DALobj.LocalizarNome(valor);
+        }
+        public DataTable LocalizarCpfcnpj(String valor)
+        {
+            DALCliente DALobj = new DALCliente(conexao);
+            return DALobj.LocalizarCPF(valor);
         }
         public ModeloCliente CarregarModeloCliente(int codigo)
         {

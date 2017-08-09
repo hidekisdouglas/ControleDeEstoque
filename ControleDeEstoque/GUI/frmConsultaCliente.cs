@@ -23,6 +23,7 @@ namespace GUI
 
         private void frmConsultaCliente_Load(object sender, EventArgs e)
         {
+            rbNome.Checked = true;
             btLocalizar_Click(sender, e);
             //Carregar todos as categorias ao abrir o formulario de consulta
             btLocalizar_Click(sender, e);
@@ -67,7 +68,14 @@ namespace GUI
         {
             DALConexao cx = new DALConexao(DadosDaConexao.StringDeConexao);
             BLLCliente bll = new BLLCliente(cx);
-            dgvDados.DataSource = bll.Localizar(txtValor.Text);
+            if (rbNome.Checked == true)
+            {
+                dgvDados.DataSource = bll.LocalizarNome(txtValor.Text);
+            }
+            else
+            {
+                dgvDados.DataSource = bll.LocalizarCpfcnpj(txtValor.Text);
+            }
         }
 
         private void dgvDados_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
