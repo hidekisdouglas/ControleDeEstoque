@@ -99,26 +99,32 @@
             // btSalvar
             // 
             this.btSalvar.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
+            this.btSalvar.Click += new System.EventHandler(this.btSalvar_Click);
             // 
             // btExcluir
             // 
             this.btExcluir.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
+            this.btExcluir.Click += new System.EventHandler(this.btExcluir_Click);
             // 
             // btAlterar
             // 
             this.btAlterar.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
+            this.btAlterar.Click += new System.EventHandler(this.btAlterar_Click);
             // 
             // btLocalizar
             // 
             this.btLocalizar.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
+            this.btLocalizar.Click += new System.EventHandler(this.btLocalizar_Click);
             // 
             // btInserir
             // 
             this.btInserir.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
+            this.btInserir.Click += new System.EventHandler(this.btInserir_Click);
             // 
             // btCancelar
             // 
             this.btCancelar.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
+            this.btCancelar.Click += new System.EventHandler(this.btCancelar_Click);
             // 
             // label1
             // 
@@ -272,7 +278,6 @@
             this.txtCidade.Name = "txtCidade";
             this.txtCidade.Size = new System.Drawing.Size(357, 20);
             this.txtCidade.TabIndex = 16;
-            this.txtCidade.TextChanged += new System.EventHandler(this.textBox6_TextChanged);
             // 
             // label8
             // 
@@ -385,6 +390,7 @@
             this.ClientSize = new System.Drawing.Size(784, 561);
             this.Name = "frmCasastroCliente";
             this.Text = "Cadastro de Cliente";
+            this.Load += new System.EventHandler(this.frmCasastroCliente_Load);
             this.pnDados.ResumeLayout(false);
             this.pnDados.PerformLayout();
             this.pnBotoes.ResumeLayout(false);

@@ -124,5 +124,10 @@ namespace GUI
             
 
         }
+
+        private void frmCadastroCategoria_Load(object sender, EventArgs e)
+        {
+            this.alteraBotoes(1);
+        }
     }
 }
