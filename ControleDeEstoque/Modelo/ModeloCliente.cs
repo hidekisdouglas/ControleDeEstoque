@@ -16,7 +16,7 @@ namespace Modelo
             this.CliCpfCnpj = "";
             this.CliRgIe = "";
             this.CliRsocial = "";
-            this.CliTipo = ""; //clitipo 0 -> pessoa fisica | clitipo -> 1 é uma pessoa juridica
+            this.CliTipo = "Física"; 
             this.CliCep = "";
             this.CliEndereco = "";
             this.CliEndNumero = "";

@@ -70,12 +70,12 @@ namespace GUI
                 modelo.CliEndNumero = txtEndNumero.Text;
                 if (rbFisica.Checked == true)
                 {
-                    modelo.CliTipo = 0; // fisica
+                    modelo.CliTipo = "Física"; // fisica
                     modelo.CliRsocial = "";
                 }
                 else
                 {
-                    modelo.CliTipo = 1; // juridica
+                    modelo.CliTipo = "Jurídica"; // juridica
                 }
                 // obj para gravar os dados no banco
                 DALConexao cx = new DALConexao(DadosDaConexao.StringDeConexao);
