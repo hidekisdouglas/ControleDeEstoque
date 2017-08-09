@@ -147,7 +147,28 @@ namespace GUI
             {
                 ModeloCliente modelo = bll.CarregarModeloCliente(f.codigo);
                 txtCodigo.Text = modelo.CliCod.ToString();
+                if (modelo.CliTipo == "Física")
+                {
+                    rbFisica.Checked = true;
+                }
+                else
+                {
+                    rbJuridica.Checked = true;
+                }
+
                 txtNome.Text = modelo.CliNome;
+                txtRazaoSocial.Text = modelo.CliRsocial;
+                txtCpfCnpj.Text = modelo.CliCpfCnpj;
+                txtRgIe.Text = modelo.CliRgIe;
+                txtEmail.Text = modelo.CliEmail;
+                txtTel.Text = modelo.CliFone;
+                txtCel.Text = modelo.CliCel;
+                txtCep.Text = modelo.CliCep;
+                txtBairro.Text = modelo.CliBairro;
+                txtEnd.Text = modelo.CliEndereco;
+                txtEndNumero.Text = modelo.CliEndNumero;
+                txtCidade.Text = modelo.CliCidade;
+                txtEstado.Text = modelo.CliEstado;
                 alteraBotoes(3);
             }
             else
