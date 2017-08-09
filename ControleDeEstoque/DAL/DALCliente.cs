@@ -23,9 +23,9 @@ namespace DAL
             SqlCommand cmd = new SqlCommand();
             cmd.Connection = conexao.ObjetoConexao;
 
-            cmd.CommandText = "insert into cliente(cli_cod, cli_nome, cli_cpfcnpj, cli_rgie, cli_rsocial, cli_tipo, cli_cep, cli_endereco, cli_endnumero, cli_bairro, " +
+            cmd.CommandText = "insert into cliente( cli_nome, cli_cpfcnpj, cli_rgie, cli_rsocial, cli_tipo, cli_cep, cli_endereco, cli_endnumero, cli_bairro, " +
                 " cli_fone, cli_cel, cli_email, cli_cidade, cli_estado) " +
-                " values (@cli_cod, @cli_nome, @cli_cpfcnpj, @cli_rgie, @cli_rsocial, @cli_tipo, @cli_cep, @cli_endereco, cli_endnumero, cli_bairro, " +
+                " values (@cli_nome, @cli_cpfcnpj, @cli_rgie, @cli_rsocial, @cli_tipo, @cli_cep, @cli_endereco, @cli_endnumero, @cli_bairro, " +
                 " @cli_fone, @cli_cel, @cli_email, @cli_cidade, @cli_estado); select @@IDENTITY;";
             cmd.Parameters.AddWithValue("@cli_nome", modelo.CliNome);
             cmd.Parameters.AddWithValue("@cli_cpfcnpj", modelo.CliCpfCnpj);
@@ -41,6 +41,7 @@ namespace DAL
             cmd.Parameters.AddWithValue("@cli_email", modelo.CliEmail);
             cmd.Parameters.AddWithValue("@cli_cidade", modelo.CliCidade);
             cmd.Parameters.AddWithValue("@cli_estado", modelo.CliEstado);
+           
             conexao.Connectar();
             modelo.CliCod = Convert.ToInt32(cmd.ExecuteScalar());
             conexao.Desconectar();

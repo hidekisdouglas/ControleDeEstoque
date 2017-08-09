@@ -56,6 +56,19 @@ namespace GUI
                 //leitura de dados
                 ModeloCliente modelo = new ModeloCliente();
                 modelo.CliNome = txtNome.Text;
+                modelo.CliRsocial = txtRazaoSocial.Text;
+                modelo.CliCpfCnpj = txtCpfCnpj.Text;
+                modelo.CliRgIe = txtRgIe.Text;
+                modelo.CliFone = txtTel.Text;
+                modelo.CliEmail = txtEmail.Text;
+                modelo.CliCel = txtCel.Text;
+                modelo.CliCep = txtCep.Text;
+                modelo.CliBairro = txtBairro.Text;
+                modelo.CliEstado = txtEstado.Text;
+                modelo.CliCidade = txtCidade.Text;
+                modelo.CliEndereco = txtEnd.Text;
+                modelo.CliEndNumero = txtEndNumero.Text;
+                
                 // obj para gravar os dados no banco
                 DALConexao cx = new DALConexao(DadosDaConexao.StringDeConexao);
                 BLLCliente bll = new BLLCliente(cx);
