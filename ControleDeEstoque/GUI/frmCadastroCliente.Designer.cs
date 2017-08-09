@@ -1,6 +1,6 @@
 ﻿namespace GUI
 {
-    partial class frmCasastroCliente
+    partial class frmCadastroCliente
     {
         /// <summary>
         /// Variável de designer necessária.
@@ -33,10 +33,10 @@
             this.txtNome = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.rbFisica = new System.Windows.Forms.RadioButton();
             this.rbJuridica = new System.Windows.Forms.RadioButton();
+            this.rbFisica = new System.Windows.Forms.RadioButton();
             this.txtRazaoSocial = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
+            this.lbRazaoSocial = new System.Windows.Forms.Label();
             this.txtCpfCnpj = new System.Windows.Forms.TextBox();
             this.lbCpfCnpj = new System.Windows.Forms.Label();
             this.txtRgIe = new System.Windows.Forms.TextBox();
@@ -89,7 +89,7 @@
             this.pnDados.Controls.Add(this.txtCpfCnpj);
             this.pnDados.Controls.Add(this.lbCpfCnpj);
             this.pnDados.Controls.Add(this.txtRazaoSocial);
-            this.pnDados.Controls.Add(this.label3);
+            this.pnDados.Controls.Add(this.lbRazaoSocial);
             this.pnDados.Controls.Add(this.groupBox1);
             this.pnDados.Controls.Add(this.txtNome);
             this.pnDados.Controls.Add(this.label2);
@@ -170,17 +170,6 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Tipo de Cliente";
             // 
-            // rbFisica
-            // 
-            this.rbFisica.AutoSize = true;
-            this.rbFisica.Location = new System.Drawing.Point(28, 15);
-            this.rbFisica.Name = "rbFisica";
-            this.rbFisica.Size = new System.Drawing.Size(54, 17);
-            this.rbFisica.TabIndex = 0;
-            this.rbFisica.TabStop = true;
-            this.rbFisica.Text = "Física";
-            this.rbFisica.UseVisualStyleBackColor = true;
-            // 
             // rbJuridica
             // 
             this.rbJuridica.AutoSize = true;
@@ -192,21 +181,35 @@
             this.rbJuridica.Text = "Jurídica";
             this.rbJuridica.UseVisualStyleBackColor = true;
             // 
+            // rbFisica
+            // 
+            this.rbFisica.AutoSize = true;
+            this.rbFisica.Location = new System.Drawing.Point(28, 15);
+            this.rbFisica.Name = "rbFisica";
+            this.rbFisica.Size = new System.Drawing.Size(54, 17);
+            this.rbFisica.TabIndex = 0;
+            this.rbFisica.TabStop = true;
+            this.rbFisica.Text = "Física";
+            this.rbFisica.UseVisualStyleBackColor = true;
+            this.rbFisica.CheckedChanged += new System.EventHandler(this.rbFisica_CheckedChanged);
+            // 
             // txtRazaoSocial
             // 
             this.txtRazaoSocial.Location = new System.Drawing.Point(388, 30);
             this.txtRazaoSocial.Name = "txtRazaoSocial";
             this.txtRazaoSocial.Size = new System.Drawing.Size(357, 20);
             this.txtRazaoSocial.TabIndex = 6;
+            this.txtRazaoSocial.Visible = false;
             // 
-            // label3
+            // lbRazaoSocial
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(385, 13);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(70, 13);
-            this.label3.TabIndex = 5;
-            this.label3.Text = "Razão Social";
+            this.lbRazaoSocial.AutoSize = true;
+            this.lbRazaoSocial.Location = new System.Drawing.Point(385, 13);
+            this.lbRazaoSocial.Name = "lbRazaoSocial";
+            this.lbRazaoSocial.Size = new System.Drawing.Size(70, 13);
+            this.lbRazaoSocial.TabIndex = 5;
+            this.lbRazaoSocial.Text = "Razão Social";
+            this.lbRazaoSocial.Visible = false;
             // 
             // txtCpfCnpj
             // 
@@ -384,11 +387,11 @@
             this.label15.TabIndex = 29;
             this.label15.Text = "Bairro";
             // 
-            // frmCasastroCliente
+            // frmCadastroCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.ClientSize = new System.Drawing.Size(784, 561);
-            this.Name = "frmCasastroCliente";
+            this.Name = "frmCadastroCliente";
             this.Text = "Cadastro de Cliente";
             this.Load += new System.EventHandler(this.frmCasastroCliente_Load);
             this.pnDados.ResumeLayout(false);
@@ -417,7 +420,7 @@
         private System.Windows.Forms.TextBox txtCpfCnpj;
         private System.Windows.Forms.Label lbCpfCnpj;
         private System.Windows.Forms.TextBox txtRazaoSocial;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label lbRazaoSocial;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.RadioButton rbJuridica;
         private System.Windows.Forms.RadioButton rbFisica;

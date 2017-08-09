@@ -11,9 +11,9 @@ using System.Windows.Forms;
 
 namespace GUI
 {
-    public partial class frmCasastroCliente : GUI.frmModeloDeFormularioDeCadastro
+    public partial class frmCadastroCliente : GUI.frmModeloDeFormularioDeCadastro
     {
-        public frmCasastroCliente()
+        public frmCadastroCliente()
         {
             InitializeComponent();
         }
@@ -114,7 +114,7 @@ namespace GUI
 
         private void btLocalizar_Click(object sender, EventArgs e)
         {
-            frmConsultaCliente f = new frmConsultaCliente();
+           /* frmConsultaCliente f = new frmConsultaCliente();
             // obj para gravar os dados no banco
             DALConexao cx = new DALConexao(DadosDaConexao.StringDeConexao);
             BLLCliente bll = new BLLCliente(cx);
@@ -134,12 +134,31 @@ namespace GUI
                 this.alteraBotoes(1);
             }
             f.Dispose();
-
+            */
         }
 
         private void frmCasastroCliente_Load(object sender, EventArgs e)
         {
             this.alteraBotoes(1);
+            rbFisica.Checked = true;
+        }
+
+        private void rbFisica_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rbFisica.Checked == true)
+            {
+                lbRazaoSocial.Visible = false;
+                txtRazaoSocial.Visible = false;
+                lbCpfCnpj.Text = "CPF";
+                lbRgIe.Text = "RG";
+            }
+            else
+            {
+                lbRazaoSocial.Visible = true;
+                txtRazaoSocial.Visible = true;
+                lbCpfCnpj.Text = "CNPJ";
+                lbRgIe.Text = "I.E";
+            }
         }
     }
 }
