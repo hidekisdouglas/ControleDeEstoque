@@ -122,5 +122,36 @@ namespace DAL
             conexao.Desconectar();
             return modelo;
         }
+        public ModeloCliente CarregaModeloCliente(string cpfcnpj)
+        {
+            ModeloCliente modelo = new ModeloCliente();
+            SqlCommand cmd = new SqlCommand();
+            cmd.Connection = conexao.ObjetoConexao;
+            cmd.CommandText = ("select * from cliente where cli_cpfcnpj = @cli_cpfcnpj");
+            cmd.Parameters.AddWithValue("@cli_cpfcnpj", cpfcnpj);
+            conexao.Connectar();
+            SqlDataReader registro = cmd.ExecuteReader();
+            if (registro.HasRows)
+            {
+                registro.Read();
+                modelo.CliCod = Convert.ToInt32(registro["cli_cod"]);
+                modelo.CliNome = Convert.ToString(registro["cli_nome"]);
+                modelo.CliCpfCnpj = Convert.ToString(registro["cli_cpfcnpj"]);
+                modelo.CliRgIe = Convert.ToString(registro["cli_rgie"]);
+                modelo.CliRsocial = Convert.ToString(registro["cli_rsocial"]);
+                modelo.CliTipo = Convert.ToInt32(registro["cli_tipo"]);
+                modelo.CliCep = Convert.ToString(registro["cli_cep"]);
+                modelo.CliEndereco = Convert.ToString(registro["cli_endereco"]);
+                modelo.CliEndNumero = Convert.ToString(registro["cli_endnumero"]);
+                modelo.CliBairro = Convert.ToString(registro["cli_bairro"]);
+                modelo.CliFone = Convert.ToString(registro["cli_fone"]);
+                modelo.CliCel = Convert.ToString(registro["cli_cel"]);
+                modelo.CliEmail = Convert.ToString(registro["cli_email"]);
+                modelo.CliCidade = Convert.ToString(registro["cli_cidade"]);
+                modelo.CliEstado = Convert.ToString(registro["cli_estado"]);
+            }
+            conexao.Desconectar();
+            return modelo;
+        }
     }
 }

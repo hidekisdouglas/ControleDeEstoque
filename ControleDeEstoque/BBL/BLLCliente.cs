@@ -31,35 +31,10 @@ namespace BLL
             {
                 throw new Exception("O rg/insc.est. do cliente é obrigatório");
             }
-            if (modelo.CliEndereco.Trim().Length == 0)
-            {
-                throw new Exception("O endereço do cliente é obrigatório");
-            }
-            if (modelo.CliEndNumero.Trim().Length == 0)
-            {
-                throw new Exception("O numero do endereço do cliente é obrigatório");
-            }
             if (modelo.CliFone.Trim().Length == 0)
             {
                 throw new Exception("O telefone do cliente é obrigatório");
             }
-            if (modelo.CliBairro.Trim().Length == 0)
-            {
-                throw new Exception("O bairro do cliente é obrigatório");
-            }
-            if (modelo.CliCep.Trim().Length == 0)
-            {
-                throw new Exception("O cep do cliente é obrigatório");
-            }
-            if (modelo.CliCidade.Trim().Length == 0)
-            {
-                throw new Exception("A cidade do cliente é obrigatório");
-            }
-            if (modelo.CliEstado.Trim().Length == 0)
-            {
-                throw new Exception("O estado do cliente é obrigatório");
-            }
-
             modelo.CliNome = modelo.CliNome.ToUpper();
             modelo.CliEndereco = modelo.CliEndereco.ToUpper();
             modelo.CliBairro = modelo.CliBairro.ToUpper();
@@ -82,35 +57,11 @@ namespace BLL
             {
                 throw new Exception("O rg/insc.est. do cliente é obrigatório");
             }
-            if (modelo.CliEndereco.Trim().Length == 0)
-            {
-                throw new Exception("O endereço do cliente é obrigatório");
-            }
-            if (modelo.CliEndNumero.Trim().Length == 0)
-            {
-                throw new Exception("O numero do endereço do cliente é obrigatório");
-            }
             if (modelo.CliFone.Trim().Length == 0)
             {
                 throw new Exception("O telefone do cliente é obrigatório");
             }
-            if (modelo.CliBairro.Trim().Length == 0)
-            {
-                throw new Exception("O bairro do cliente é obrigatório");
-            }
-            if (modelo.CliCep.Trim().Length == 0)
-            {
-                throw new Exception("O cep do cliente é obrigatório");
-            }
-            if (modelo.CliCidade.Trim().Length == 0)
-            {
-                throw new Exception("A cidade do cliente é obrigatório");
-            }
-            if (modelo.CliEstado.Trim().Length == 0)
-            {
-                throw new Exception("O estado do cliente é obrigatório");
-            }
-
+            
             modelo.CliNome = modelo.CliNome.ToUpper();
             modelo.CliEndereco = modelo.CliEndereco.ToUpper();
             modelo.CliBairro = modelo.CliBairro.ToUpper();
@@ -133,6 +84,11 @@ namespace BLL
         {
             DALCliente DALobj = new DALCliente(conexao);
             return DALobj.CarregaModeloCliente(codigo);
+        }
+        public ModeloCliente CarregarModeloCliente(string cpfcnpj)
+        {
+            DALCliente DALobj = new DALCliente(conexao);
+            return DALobj.CarregaModeloCliente(cpfcnpj);
         }
     }
 }
