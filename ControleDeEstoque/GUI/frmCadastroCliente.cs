@@ -68,7 +68,15 @@ namespace GUI
                 modelo.CliCidade = txtCidade.Text;
                 modelo.CliEndereco = txtEnd.Text;
                 modelo.CliEndNumero = txtEndNumero.Text;
-                
+                if (rbFisica.Checked == true)
+                {
+                    modelo.CliTipo = 0; // fisica
+                    modelo.CliRsocial = "";
+                }
+                else
+                {
+                    modelo.CliTipo = 1; // juridica
+                }
                 // obj para gravar os dados no banco
                 DALConexao cx = new DALConexao(DadosDaConexao.StringDeConexao);
                 BLLCliente bll = new BLLCliente(cx);
