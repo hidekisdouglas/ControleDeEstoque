@@ -49,6 +49,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\ClassLibrary1\Ferramentas.csproj">
+      <Project>{b677c8a2-4615-4f47-8482-f0b6ba1bd7f6}</Project>
+      <Name>Ferramentas</Name>
+    </ProjectReference>
     <ProjectReference Include="..\DAL\DAL.csproj">
       <Project>{fbb74d36-9d53-47e7-9e2e-b3e010b08691}</Project>
       <Name>DAL</Name>

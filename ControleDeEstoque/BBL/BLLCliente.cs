@@ -1,4 +1,5 @@
 ﻿using DAL;
+using Ferramentas;
 using Modelo;
 using System;
 using System.Collections.Generic;
@@ -27,6 +28,20 @@ namespace BLL
             {
                 throw new Exception("O cpf/cnpj do cliente é obrigatório");
             }
+            if (modelo.CliTipo == "Física")
+                {
+                    if (Validacao.IsCpf(modelo.CliCpfCnpj) == false)
+                    {
+                        throw new Exception("CPF Inválido");
+                    }
+                }
+            else
+                {
+                    if (Validacao.IsCnpj(modelo.CliCpfCnpj) == false)
+                    {
+                        throw new Exception("CNPJ Inválido");
+                    }
+                }
             if (modelo.CliRgIe.Trim().Length == 0)
             {
                 throw new Exception("O rg/insc.est. do cliente é obrigatório");

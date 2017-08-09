@@ -59,6 +59,7 @@
             this.label13 = new System.Windows.Forms.Label();
             this.txtBairro = new System.Windows.Forms.TextBox();
             this.label15 = new System.Windows.Forms.Label();
+            this.lbValorIncorreto = new System.Windows.Forms.Label();
             this.pnDados.SuspendLayout();
             this.pnBotoes.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -66,6 +67,7 @@
             // 
             // pnDados
             // 
+            this.pnDados.Controls.Add(this.lbValorIncorreto);
             this.pnDados.Controls.Add(this.txtBairro);
             this.pnDados.Controls.Add(this.label15);
             this.pnDados.Controls.Add(this.txtEmail);
@@ -217,6 +219,7 @@
             this.txtCpfCnpj.Name = "txtCpfCnpj";
             this.txtCpfCnpj.Size = new System.Drawing.Size(357, 20);
             this.txtCpfCnpj.TabIndex = 8;
+            this.txtCpfCnpj.Leave += new System.EventHandler(this.txtCpfCnpj_Leave);
             // 
             // lbCpfCnpj
             // 
@@ -388,6 +391,17 @@
             this.label15.TabIndex = 29;
             this.label15.Text = "Bairro";
             // 
+            // lbValorIncorreto
+            // 
+            this.lbValorIncorreto.AutoSize = true;
+            this.lbValorIncorreto.ForeColor = System.Drawing.Color.Red;
+            this.lbValorIncorreto.Location = new System.Drawing.Point(419, 69);
+            this.lbValorIncorreto.Name = "lbValorIncorreto";
+            this.lbValorIncorreto.Size = new System.Drawing.Size(78, 13);
+            this.lbValorIncorreto.TabIndex = 31;
+            this.lbValorIncorreto.Text = "Valor incorreto!";
+            this.lbValorIncorreto.Visible = false;
+            // 
             // frmCadastroCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -437,5 +451,6 @@
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.TextBox txtTel;
         private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label lbValorIncorreto;
     }
 }

@@ -214,5 +214,24 @@ namespace GUI
                 txtEnd.Text = BuscaEndereco.endereco;
             }
         }
+
+        private void txtCpfCnpj_Leave(object sender, EventArgs e)
+        {
+            lbValorIncorreto.Visible = false;
+            if (rbFisica.Checked == true)
+            {
+                if (Validacao.IsCpf(txtCpfCnpj.Text) == false)
+                {
+                    lbValorIncorreto.Visible = true;
+                }
+            }
+            else
+            {
+                if (Validacao.IsCnpj(txtCpfCnpj.Text) == false)
+                {
+                    lbValorIncorreto.Visible = true;
+                }
+            }
+        }
     }
 }
