@@ -49,11 +49,6 @@ namespace GUI
             }
         }
 
-        private void dgvDados_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
         private void txtValor_TextChanged(object sender, EventArgs e)
         {
 

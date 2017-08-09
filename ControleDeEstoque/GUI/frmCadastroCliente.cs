@@ -136,7 +136,7 @@ namespace GUI
 
         private void btLocalizar_Click(object sender, EventArgs e)
         {
-           /* frmConsultaCliente f = new frmConsultaCliente();
+            frmConsultaCliente f = new frmConsultaCliente();
             // obj para gravar os dados no banco
             DALConexao cx = new DALConexao(DadosDaConexao.StringDeConexao);
             BLLCliente bll = new BLLCliente(cx);
@@ -156,7 +156,7 @@ namespace GUI
                 this.alteraBotoes(1);
             }
             f.Dispose();
-            */
+            
         }
 
         private void frmCasastroCliente_Load(object sender, EventArgs e)
