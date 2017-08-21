@@ -8,14 +8,14 @@ namespace DAL
 {
     public class DadosDaConexao
     {
-        public static String servidor = @"DOUGLAS-PC\SQLEXPRESS";
+        public static String servidor = @"DOUGLASPC\SQLEXPRESS";
         public static String banco = "ControleDeEstoque";
         public static String usuario = "sa";
         public static String senha = "admin123";
         
         public static String StringDeConexao
         {
-            get
+            get 
             {
                 return @"Data Source="+servidor+";Initial Catalog="+banco+";User ID="+usuario+"; Password="+senha;
             }
