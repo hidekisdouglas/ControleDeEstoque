@@ -106,7 +106,7 @@ namespace GUI
             }
         }
 
-        private void btExcluir_Click(object sender, EventArgs e)
+        private void btExcluir_Forck(object sender, EventArgs e)
         {
             try
             {
@@ -130,30 +130,30 @@ namespace GUI
             }
         }
 
-        private void btLocalizar_Click(object sender, EventArgs e)
+        private void btLocalizar_Forck(object sender, EventArgs e)
         {
-            frmConsultaCliente f = new frmConsultaCliente();
+            frmConsultaFornecedor f = new frmConsultaFornecedor();
             // obj para gravar os dados no banco
             DALConexao cx = new DALConexao(DadosDaConexao.StringDeConexao);
-            BLLCliente bll = new BLLCliente(cx);
-            //exibe o frmConsultaCategoria para seleção da alteração
+            BLLFornecedor bll = new BLLFornecedor(cx);
+            //exibe o frmConsultaFornecedora para seleção da alteração
             f.ShowDialog();
-            //verifica se foi armazenado uma categoria no frmConsultaCategoria
+            //verifica se foi armazenado um fornecedor no frmConsultaFornecedor
             if (f.codigo != 0)
             {
-                txtNome.Text = modelo.CliNome;
-                txtRazaoSocial.Text = modelo.CliRsocial;
-                txtCpfCnpj.Text = modelo.CliCpfCnpj;
-                txtRgIe.Text = modelo.CliRgIe;
-                txtEmail.Text = modelo.CliEmail;
-                txtTel.Text = modelo.CliFone;
-                txtCel.Text = modelo.CliCel;
-                txtCep.Text = modelo.CliCep;
-                txtBairro.Text = modelo.CliBairro;
-                txtEnd.Text = modelo.CliEndereco;
-                txtEndNumero.Text = modelo.CliEndNumero;
-                txtCidade.Text = modelo.CliCidade;
-                txtEstado.Text = modelo.CliEstado;
+                txtNome.Text = modelo.ForNome;
+                txtRazaoSocial.Text = modelo.ForRsocial;
+                txtCpfCnpj.Text = modelo.ForCnpj;
+                txtRgIe.Text = modelo.ForIe;
+                txtEmail.Text = modelo.ForEmail;
+                txtTel.Text = modelo.ForFone;
+                txtCel.Text = modelo.ForCel;
+                txtCep.Text = modelo.ForCep;
+                txtBairro.Text = modelo.ForBairro;
+                txtEnd.Text = modelo.ForEndereco;
+                txtEndNumero.Text = modelo.ForEndNumero;
+                txtCidade.Text = modelo.ForCidade;
+                txtEstado.Text = modelo.ForEstado;
                 alteraBotoes(3);
             }
             else
@@ -162,7 +162,19 @@ namespace GUI
                 this.alteraBotoes(1);
             }
             f.Dispose();
+            
+        }
 
+        private void btInserir_Forck(object sender, EventArgs e)
+        {
+            this.operacao = "inserir";
+            this.alteraBotoes(2);
+        }
+
+        private void btCancelar_Forck(object sender, EventArgs e)
+        {
+            this.limpaTela();
+            this.alteraBotoes(1);
         }
     }
 }

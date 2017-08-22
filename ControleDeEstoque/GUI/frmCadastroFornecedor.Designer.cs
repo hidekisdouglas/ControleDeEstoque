@@ -114,10 +114,12 @@
             // btInserir
             // 
             this.btInserir.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
+            this.btInserir.Click += new System.EventHandler(this.btInserir_Click);
             // 
             // btCancelar
             // 
             this.btCancelar.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
+            this.btCancelar.Click += new System.EventHandler(this.btCancelar_Click);
             // 
             // lbValorIncorreto
             // 

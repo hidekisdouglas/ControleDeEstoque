@@ -153,5 +153,12 @@ namespace GUI
             f.ShowDialog();
             f.Dispose();
         }
+
+        private void fornecedorToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmCadastroFornecedor f = new frmCadastroFornecedor();
+            f.ShowDialog();
+            f.Dispose();
+        }
     }
 }
