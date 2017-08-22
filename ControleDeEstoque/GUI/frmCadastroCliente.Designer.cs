@@ -219,6 +219,7 @@
             this.txtCpfCnpj.Name = "txtCpfCnpj";
             this.txtCpfCnpj.Size = new System.Drawing.Size(357, 20);
             this.txtCpfCnpj.TabIndex = 8;
+            this.txtCpfCnpj.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCpfCnpj_KeyPress);
             this.txtCpfCnpj.Leave += new System.EventHandler(this.txtCpfCnpj_Leave);
             // 
             // lbCpfCnpj

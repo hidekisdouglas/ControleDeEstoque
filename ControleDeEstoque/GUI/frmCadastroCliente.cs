@@ -18,6 +18,53 @@ namespace GUI
         {
             InitializeComponent();
         }
+        public enum Campo
+        {
+            CPF = 1,
+            CNPJ = 2,
+        }
+        public void Formatar(Campo Valor, TextBox txtCpfCnpj)
+        {
+            switch (Valor)
+            {
+                case Campo.CPF:
+                    txtCpfCnpj.MaxLength = 14;
+                    if (txtCpfCnpj.Text.Length == 3)
+                    {
+                        txtCpfCnpj.Text = txtCpfCnpj.Text + ".";
+                        txtCpfCnpj.SelectionStart = txtCpfCnpj.Text.Length + 1;
+                    }
+                    else if (txtCpfCnpj.Text.Length == 7)
+                    {
+                        txtCpfCnpj.Text = txtCpfCnpj.Text + ".";
+                        txtCpfCnpj.SelectionStart = txtCpfCnpj.Text.Length + 1;
+                    }
+                    else if (txtCpfCnpj.Text.Length == 11)
+                    {
+                        txtCpfCnpj.Text = txtCpfCnpj.Text + "-";
+                        txtCpfCnpj.SelectionStart = txtCpfCnpj.Text.Length + 1;
+                    }
+                    break;
+                case Campo.CNPJ:
+                    txtCpfCnpj.MaxLength = 18;
+                    if (txtCpfCnpj.Text.Length == 2 || txtCpfCnpj.Text.Length == 6)
+                    {
+                        txtCpfCnpj.Text = txtCpfCnpj.Text + ".";
+                        txtCpfCnpj.SelectionStart = txtCpfCnpj.Text.Length + 1;
+                    }
+                    else if (txtCpfCnpj.Text.Length == 10)
+                    {
+                        txtCpfCnpj.Text = txtCpfCnpj.Text + "/";
+                        txtCpfCnpj.SelectionStart = txtCpfCnpj.Text.Length + 1;
+                    }
+                    else if (txtCpfCnpj.Text.Length == 15)
+                    {
+                        txtCpfCnpj.Text = txtCpfCnpj.Text + "-";
+                        txtCpfCnpj.SelectionStart = txtCpfCnpj.Text.Length + 1;
+                    }
+                    break;
+            }
+        }
         public void limpaTela()
         {
             txtCodigo.Clear();
@@ -232,6 +279,18 @@ namespace GUI
                     lbValorIncorreto.Visible = true;
                 }
             }
+           
+        }
+
+        private void txtCpfCnpj_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar != (char)8)
+            {
+                Campo edit = Campo.CPF;
+                if (rbFisica.Checked == false) edit = Campo.CNPJ;
+                Formatar(edit, txtCpfCnpj);
+            }
+            
         }
     }
 }
