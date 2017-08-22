@@ -37,7 +37,7 @@ namespace BLL
             
             if (modelo.ForIe.Trim().Length == 0)
             {
-                throw new Exception("O rg/insc.est. do fornecedor é obrigatório");
+                throw new Exception("A insc.est. do fornecedor é obrigatório");
             }
             if (modelo.ForFone.Trim().Length == 0)
             {
