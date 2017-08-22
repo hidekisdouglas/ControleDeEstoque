@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
 namespace Ferramentas
@@ -102,6 +103,22 @@ namespace Ferramentas
                 digito = digito + resto.ToString();
                 return cnpj.EndsWith(digito);
             }
+        }
+        public bool ValidaEmail(string email) { 
+        // Validação para email
+        string strRegex = "^([a-zA-Z0-9_\\-\\.]+)@((\\[[0-9]{1,3}"
+        + "\\.[0-9]{1,3}\\.[0-9]{1,3}\\.)|(([a-zA-Z0-9\\-]+\\"
+        + ".)+))([a-zA-Z]{2,4}|[0,9]{1,3})(\\]?)$";
+            Regex re = new Regex(strRegex);
+            return re.IsMatch(email);
+            
+        }
+        //************************************************************************************
+
+        //Valida  CEP
+        public static bool ValidaCep(string cep)
+        {
+            return System.Text.RegularExpressions.Regex.IsMatch(cep, ("[0-9]{5}-[0-9]{3}"));
         }
     }
 }

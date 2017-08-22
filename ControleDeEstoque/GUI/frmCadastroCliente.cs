@@ -22,6 +22,7 @@ namespace GUI
         {
             CPF = 1,
             CNPJ = 2,
+            CEP = 3
         }
         public void Formatar(Campo Valor, TextBox txtCpfCnpj)
         {
@@ -58,6 +59,14 @@ namespace GUI
                         txtCpfCnpj.SelectionStart = txtCpfCnpj.Text.Length + 1;
                     }
                     else if (txtCpfCnpj.Text.Length == 15)
+                    {
+                        txtCpfCnpj.Text = txtCpfCnpj.Text + "-";
+                        txtCpfCnpj.SelectionStart = txtCpfCnpj.Text.Length + 1;
+                    }
+                    break;
+                case Campo.CEP:
+                    txtCep.MaxLength = 9;
+                    if (txtCpfCnpj.Text.Length == 5)
                     {
                         txtCpfCnpj.Text = txtCpfCnpj.Text + "-";
                         txtCpfCnpj.SelectionStart = txtCpfCnpj.Text.Length + 1;
@@ -253,13 +262,26 @@ namespace GUI
 
         private void txtCep_Leave(object sender, EventArgs e)
         {
-            if (BuscaEndereco.verificaCEP(txtCep.Text) == true)
+            //Valida CEP
+            if (Validacao.ValidaCep(txtCep.Text) == false)
             {
-                txtBairro.Text = BuscaEndereco.bairro;
-                txtEstado.Text = BuscaEndereco.estado;
-                txtCidade.Text = BuscaEndereco.cidade;
-                txtEnd.Text = BuscaEndereco.endereco;
+                MessageBox.Show("O CEP é inválido");
+                txtBairro.Clear();
+                txtEstado.Clear();
+                txtCidade.Clear();
+                txtEnd.Clear();
             }
+            else
+            {
+                if (BuscaEndereco.verificaCEP(txtCep.Text) == true)
+                {
+                    txtBairro.Text = BuscaEndereco.bairro;
+                    txtEstado.Text = BuscaEndereco.estado;
+                    txtCidade.Text = BuscaEndereco.cidade;
+                    txtEnd.Text = BuscaEndereco.endereco;
+                }
+            }
+            
         }
 
         private void txtCpfCnpj_Leave(object sender, EventArgs e)
@@ -291,6 +313,15 @@ namespace GUI
                 Formatar(edit, txtCpfCnpj);
             }
             
+        }
+
+        private void txtCep_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar != (char)8)
+            {
+                Campo edit = Campo.CEP;
+                Formatar(edit, txtCep);
+            }
         }
     }
 }
