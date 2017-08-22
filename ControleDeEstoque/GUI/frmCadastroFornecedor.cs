@@ -41,25 +41,79 @@ namespace GUI
             this.alteraBotoes(1);
         }
 
-        private void btInserir_Forck(object sender, EventArgs e)
+       private void btInserir_Click(object sender, EventArgs e)
         {
             this.operacao = "inserir";
             this.alteraBotoes(2);
         }
 
-        private void btCancelar_Forck(object sender, EventArgs e)
+        private void btCancelar_Click(object sender, EventArgs e)
         {
             this.limpaTela();
             this.alteraBotoes(1);
         }
 
-        private void btAlterar_Forck(object sender, EventArgs e)
+        private void btExcluir_Click(object sender, EventArgs e)
         {
-            this.operacao = "alterar";
-            this.alteraBotoes(2);
+            try
+            {
+                //leitura de dados
+                DialogResult d = MessageBox.Show("Deseja excluir o fornecedor?", "Aviso", MessageBoxButtons.YesNo);
+
+                if (d.ToString() == "Yes")
+                {
+                    // obj para gravar os dados no banco
+                    DALConexao cx = new DALConexao(DadosDaConexao.StringDeConexao);
+                    BLLFornecedor bll = new BLLFornecedor(cx);
+                    bll.Excluir(Convert.ToInt32(txtCodigo.Text));
+                    this.limpaTela();
+                    this.alteraBotoes(1);
+                }
+            }
+            catch
+            {
+                MessageBox.Show("Não é possível excluir a categoria! \n A categoria está sendo utilizada em outro local.");
+                this.alteraBotoes(3);
+            }
         }
 
-        private void btSalvar_Forck(object sender, EventArgs e)
+        private void btLocalizar_Click(object sender, EventArgs e)
+        {
+            frmConsultaFornecedor f = new frmConsultaFornecedor();
+            // obj para gravar os dados no banco
+            DALConexao cx = new DALConexao(DadosDaConexao.StringDeConexao);
+            BLLFornecedor bll = new BLLFornecedor(cx);
+            //exibe o frmConsultaCategoria para seleção da alteração
+            f.ShowDialog();
+            //verifica se foi armazenado uma categoria no frmConsultaCategoria
+            if (f.codigo != 0)
+            {
+                ModeloFornecedor modelo = bll.CarregarModeloFornecedor(f.codigo);
+                txtCodigo.Text = modelo.ForCod.ToString();
+                txtNome.Text = modelo.ForNome;
+                txtRazaoSocial.Text = modelo.ForRsocial;
+                txtCpfCnpj.Text = modelo.ForCnpj;
+                txtRgIe.Text = modelo.ForIe;
+                txtEmail.Text = modelo.ForEmail;
+                txtTel.Text = modelo.ForFone;
+                txtCel.Text = modelo.ForCel;
+                txtCep.Text = modelo.ForCep;
+                txtBairro.Text = modelo.ForBairro;
+                txtEnd.Text = modelo.ForEndereco;
+                txtEndNumero.Text = modelo.ForEndNumero;
+                txtCidade.Text = modelo.ForCidade;
+                txtEstado.Text = modelo.ForEstado;
+                alteraBotoes(3);
+            }
+            else
+            {
+                this.limpaTela();
+                this.alteraBotoes(1);
+            }
+            f.Dispose();
+        }
+
+        private void btSalvar_Click(object sender, EventArgs e)
         {
             try
             {
@@ -78,7 +132,7 @@ namespace GUI
                 modelo.ForCidade = txtCidade.Text;
                 modelo.ForEndereco = txtEnd.Text;
                 modelo.ForEndNumero = txtEndNumero.Text;
-                
+
                 // obj para gravar os dados no banco
                 DALConexao cx = new DALConexao(DadosDaConexao.StringDeConexao);
                 BLLFornecedor bll = new BLLFornecedor(cx);
@@ -106,75 +160,10 @@ namespace GUI
             }
         }
 
-        private void btExcluir_Forck(object sender, EventArgs e)
+        private void btAlterar_Click(object sender, EventArgs e)
         {
-            try
-            {
-                //leitura de dados
-                DialogResult d = MessageBox.Show("Deseja excluir o fornecedor?", "Aviso", MessageBoxButtons.YesNo);
-
-                if (d.ToString() == "Yes")
-                {
-                    // obj para gravar os dados no banco
-                    DALConexao cx = new DALConexao(DadosDaConexao.StringDeConexao);
-                    BLLFornecedor bll = new BLLFornecedor(cx);
-                    bll.Excluir(Convert.ToInt32(txtCodigo.Text));
-                    this.limpaTela();
-                    this.alteraBotoes(1);
-                }
-            }
-            catch
-            {
-                MessageBox.Show("Não é possível excluir a categoria! \n A categoria está sendo utilizada em outro local.");
-                this.alteraBotoes(3);
-            }
-        }
-
-        private void btLocalizar_Forck(object sender, EventArgs e)
-        {
-            frmConsultaFornecedor f = new frmConsultaFornecedor();
-            // obj para gravar os dados no banco
-            DALConexao cx = new DALConexao(DadosDaConexao.StringDeConexao);
-            BLLFornecedor bll = new BLLFornecedor(cx);
-            //exibe o frmConsultaFornecedora para seleção da alteração
-            f.ShowDialog();
-            //verifica se foi armazenado um fornecedor no frmConsultaFornecedor
-            if (f.codigo != 0)
-            {
-                txtNome.Text = modelo.ForNome;
-                txtRazaoSocial.Text = modelo.ForRsocial;
-                txtCpfCnpj.Text = modelo.ForCnpj;
-                txtRgIe.Text = modelo.ForIe;
-                txtEmail.Text = modelo.ForEmail;
-                txtTel.Text = modelo.ForFone;
-                txtCel.Text = modelo.ForCel;
-                txtCep.Text = modelo.ForCep;
-                txtBairro.Text = modelo.ForBairro;
-                txtEnd.Text = modelo.ForEndereco;
-                txtEndNumero.Text = modelo.ForEndNumero;
-                txtCidade.Text = modelo.ForCidade;
-                txtEstado.Text = modelo.ForEstado;
-                alteraBotoes(3);
-            }
-            else
-            {
-                this.limpaTela();
-                this.alteraBotoes(1);
-            }
-            f.Dispose();
-            
-        }
-
-        private void btInserir_Forck(object sender, EventArgs e)
-        {
-            this.operacao = "inserir";
+            this.operacao = "alterar";
             this.alteraBotoes(2);
-        }
-
-        private void btCancelar_Forck(object sender, EventArgs e)
-        {
-            this.limpaTela();
-            this.alteraBotoes(1);
         }
     }
 }

@@ -23,13 +23,13 @@ namespace DAL
             SqlCommand cmd = new SqlCommand();
             cmd.Connection = conexao.ObjetoConexao;
 
-            cmd.CommandText = "insert into fornecedor( for_nome, for_cpfcnpj, for_ie, for_rsocial, for_cep, for_endereco, for_endnumero, for_bairro, " +
+            cmd.CommandText = "insert into fornecedor( for_nome, for_cnpj, for_ie, for_rsocial, for_cep, for_endereco, for_endnumero, for_bairro, " +
                 " for_fone, for_cel, for_email, for_cidade, for_estado) " +
                 " values (@for_nome, @for_cnpj, @for_ie, @for_rsocial, @for_cep, @for_endereco, @for_endnumero, @for_bairro, " +
                 " @for_fone, @for_cel, @for_email, @for_cidade, @for_estado); select @@IDENTITY;";
             cmd.Parameters.AddWithValue("@for_nome", modelo.ForNome);
-            cmd.Parameters.AddWithValue("@for_cpfcnpj", modelo.ForCnpj);
-            cmd.Parameters.AddWithValue("@for_rgie", modelo.ForIe);
+            cmd.Parameters.AddWithValue("@for_cnpj", modelo.ForCnpj);
+            cmd.Parameters.AddWithValue("@for_ie", modelo.ForIe);
             cmd.Parameters.AddWithValue("@for_rsocial", modelo.ForRsocial);
             cmd.Parameters.AddWithValue("@for_cep", modelo.ForCep);
             cmd.Parameters.AddWithValue("@for_endereco", modelo.ForEndereco);
@@ -55,8 +55,8 @@ namespace DAL
                 " for_fone = @for_fone, for_cel = @for_cel, for_email = @for_email, for_cidade = @for_cidade, for_estado = @for_estado  where for_cod = @for_cod";
             cmd.Parameters.AddWithValue("@for_cod", modelo.ForCod);
             cmd.Parameters.AddWithValue("@for_nome", modelo.ForNome);
-            cmd.Parameters.AddWithValue("@for_cpfcnpj", modelo.ForCnpj);
-            cmd.Parameters.AddWithValue("@for_rgie", modelo.ForIe);
+            cmd.Parameters.AddWithValue("@for_cnpj", modelo.ForCnpj);
+            cmd.Parameters.AddWithValue("@for_ie", modelo.ForIe);
             cmd.Parameters.AddWithValue("@for_rsocial", modelo.ForRsocial);
             cmd.Parameters.AddWithValue("@for_cep", modelo.ForCep);
             cmd.Parameters.AddWithValue("@for_endereco", modelo.ForEndereco);

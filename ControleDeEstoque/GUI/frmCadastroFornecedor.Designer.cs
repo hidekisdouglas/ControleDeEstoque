@@ -96,6 +96,7 @@
             // btSalvar
             // 
             this.btSalvar.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
+            this.btSalvar.Click += new System.EventHandler(this.btSalvar_Click);
             // 
             // btExcluir
             // 
@@ -105,6 +106,7 @@
             // btAlterar
             // 
             this.btAlterar.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
+            this.btAlterar.Click += new System.EventHandler(this.btAlterar_Click);
             // 
             // btLocalizar
             // 
@@ -314,7 +316,6 @@
             this.txtRazaoSocial.Name = "txtRazaoSocial";
             this.txtRazaoSocial.Size = new System.Drawing.Size(732, 20);
             this.txtRazaoSocial.TabIndex = 38;
-            this.txtRazaoSocial.Visible = false;
             // 
             // lbRazaoSocial
             // 
@@ -324,7 +325,6 @@
             this.lbRazaoSocial.Size = new System.Drawing.Size(70, 13);
             this.lbRazaoSocial.TabIndex = 37;
             this.lbRazaoSocial.Text = "Razão Social";
-            this.lbRazaoSocial.Visible = false;
             // 
             // txtNome
             // 

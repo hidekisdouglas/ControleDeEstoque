@@ -110,12 +110,12 @@ namespace BLL
             DALFornecedor DALobj = new DALFornecedor(conexao);
             return DALobj.LocalizarNome(valor);
         }
-        public DataTable LocalizarCpfcnpj(String valor)
+        public DataTable LocalizarCnpj(String valor)
         {
             DALFornecedor DALobj = new DALFornecedor(conexao);
             return DALobj.LocalizarCNPJ(valor);
         }
-        public ModeloFornecedor CarregarModeloForente(int codigo)
+        public ModeloFornecedor CarregarModeloFornecedor(int codigo)
         {
             DALFornecedor DALobj = new DALFornecedor(conexao);
             return DALobj.CarregaModeloFornecedor(codigo);

@@ -160,5 +160,12 @@ namespace GUI
             f.ShowDialog();
             f.Dispose();
         }
+
+        private void fornecedorToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            frmConsultaFornecedor f = new frmConsultaFornecedor();
+            f.ShowDialog();
+            f.Dispose();
+        }
     }
 }
