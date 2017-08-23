@@ -174,5 +174,12 @@ namespace GUI
             f.ShowDialog();
             f.Dispose();
         }
+
+        private void sobreToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmSobre f = new frmSobre();
+            f.ShowDialog();
+            f.Dispose();
+        }
     }
 }
