@@ -196,6 +196,7 @@ namespace GUI
 
                 if (this.operacao == "inserir")
                 {
+
                     //cadastrar um fornecedor
                     bll.Incluir(modelo);
                     MessageBox.Show("Cadastro efetuado com sucesso! O código do fornecedor é: " + modelo.ForCod.ToString());
