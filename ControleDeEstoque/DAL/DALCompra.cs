@@ -69,28 +69,68 @@ namespace DAL
             cmd.ExecuteNonQuery();
             conexao.Desconectar();
         }
-
-        public DataTable Localizar(String valor)
+        //Localizar por fornecedor
+        public DataTable Localizar(int codigo)
         {
             DataTable tabela = new DataTable();
-            SqlDataAdapter da = new SqlDataAdapter("select * from compra where cat_nome like '%" + valor + "%'", conexao.stringConexao);
+            //SqlDataAdapter da = new SqlDataAdapter("select * from compra where for_cod = " + codigo.ToString() , conexao.stringConexao);
+            SqlDataAdapter da = new SqlDataAdapter("select c.com_cod, c.com_data, c.com_nfiscal, c.com_nparcelas, c.com_total, c.com_status, c.for_cod, c.tpa_cod," +
+                " f.for_nome from compra c inner join fornecedor f on c.for_cod = f.for_cod where f.for_cod = " + codigo.ToString(), conexao.stringConexao);
             da.Fill(tabela);
             return tabela;
         }
+        public DataTable LocalizarPorNomeFornecedor(String nome)
+        {
+            DataTable tabela = new DataTable();
+            SqlDataAdapter da = new SqlDataAdapter("select c.com_cod, c.com_data, c.com_nfiscal, c.com_nparcelas, c.com_total, c.com_status, c.for_cod, c.tpa_cod," +
+                " f.for_nome from compra c inner join fornecedor f on c.for_cod = f.for_cod where f.for_nome like '%" + nome + "%'", conexao.stringConexao);
+            da.Fill(tabela);
+            return tabela;
+        }
+        //localizar por data
+        public DataTable Localizar(DateTime dtInicial, DateTime dtFinal)
+        {
+            SqlCommand cmd = new SqlCommand();
+            cmd.Connection = conexao.ObjetoConexao;
+
+            cmd.CommandText = "select c.com_cod, c.com_data, c.com_nfiscal, c.com_nparcelas, c.com_total, c.com_status, c.for_cod, c.tpa_cod," +
+                " f.for_nome from compra c inner join fornecedor f on c.for_cod = f.for_cod where c.com_data between @dtInicial and @dtFinal";
+            cmd.Parameters.Add("@dtInicial", System.Data.SqlDbType.DateTime);
+            cmd.Parameters["@dtInicial"].Value = dtInicial;
+            cmd.CommandText = "select c.com_cod, c.com_data, c.com_nfiscal, c.com_nparcelas, c.com_total, c.com_status, c.for_cod, c.tpa_cod," +
+               " f.for_nome from compra c inner join fornecedor f on c.for_cod = f.for_cod where c.com_data between @dtInicial and @dtFinal";
+            cmd.Parameters.Add("@dtFinal", System.Data.SqlDbType.DateTime);
+            cmd.Parameters["@dtFinal"].Value = dtFinal;
+            //conexao.Connectar();
+            DataTable tabela = new DataTable();
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            da.Fill(tabela);
+            //conexao.Desconectar();
+            return tabela;
+
+        }
+
         public ModeloCompra CarregaModeloCompra(int codigo)
         {
             ModeloCompra modelo = new ModeloCompra();
             SqlCommand cmd = new SqlCommand();
             cmd.Connection = conexao.ObjetoConexao;
-            cmd.CommandText = ("select * from categoria where cat_cod = @codigo");
+            cmd.CommandText = ("select * from compra where com_cod = @codigo");
             cmd.Parameters.AddWithValue("@codigo", codigo);
             conexao.Connectar();
             SqlDataReader registro = cmd.ExecuteReader();
             if (registro.HasRows)
             {
                 registro.Read();
-                modelo.CatCod = Convert.ToInt32(registro["cat_cod"]);
-                modelo.CatNome = Convert.ToString(registro["cat_nome"]);
+                modelo.ComCod = Convert.ToInt32(registro["com_cod"]);
+                modelo.ComData = Convert.ToDateTime(registro["com_data"]);
+                modelo.ComNFiscal = Convert.ToInt32(registro["com_nfiscal"]);
+                modelo.ComNParcela = Convert.ToInt32(registro["com_nparcelas"]);
+                modelo.ComTotal = Convert.ToDouble(registro["com_total"]);
+                modelo.ComStatus = Convert.ToString(registro["com_status"]);
+                modelo.ForCod = Convert.ToInt32(registro["for_cod"]);
+                modelo.TpaCod = Convert.ToInt32(registro["tpa_cod"]);
+                
             }
             conexao.Desconectar();
             return modelo;
