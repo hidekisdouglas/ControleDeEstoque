@@ -1,5 +1,6 @@
 ﻿using BLL;
 using DAL;
+using Ferramentas;
 using Modelo;
 using System;
 using System.Collections.Generic;
@@ -17,7 +18,63 @@ namespace GUI
         {
             InitializeComponent();
         }
-        public void limpaTela()
+        public enum Campo
+        {
+            CPF = 1,
+            CNPJ = 2,
+            CEP = 3
+        }
+        public void Formatar(Campo Valor, TextBox txtCpfCnpj)
+        {
+            switch (Valor)
+            {
+                case Campo.CPF:
+                    txtCpfCnpj.MaxLength = 14;
+                    if (txtCpfCnpj.Text.Length == 3)
+                    {
+                        txtCpfCnpj.Text = txtCpfCnpj.Text + ".";
+                        txtCpfCnpj.SelectionStart = txtCpfCnpj.Text.Length + 1;
+                    }
+                    else if (txtCpfCnpj.Text.Length == 7)
+                    {
+                        txtCpfCnpj.Text = txtCpfCnpj.Text + ".";
+                        txtCpfCnpj.SelectionStart = txtCpfCnpj.Text.Length + 1;
+                    }
+                    else if (txtCpfCnpj.Text.Length == 11)
+                    {
+                        txtCpfCnpj.Text = txtCpfCnpj.Text + "-";
+                        txtCpfCnpj.SelectionStart = txtCpfCnpj.Text.Length + 1;
+                    }
+                    break;
+                case Campo.CNPJ:
+                    txtCpfCnpj.MaxLength = 18;
+                    if (txtCpfCnpj.Text.Length == 2 || txtCpfCnpj.Text.Length == 6)
+                    {
+                        txtCpfCnpj.Text = txtCpfCnpj.Text + ".";
+                        txtCpfCnpj.SelectionStart = txtCpfCnpj.Text.Length + 1;
+                    }
+                    else if (txtCpfCnpj.Text.Length == 10)
+                    {
+                        txtCpfCnpj.Text = txtCpfCnpj.Text + "/";
+                        txtCpfCnpj.SelectionStart = txtCpfCnpj.Text.Length + 1;
+                    }
+                    else if (txtCpfCnpj.Text.Length == 15)
+                    {
+                        txtCpfCnpj.Text = txtCpfCnpj.Text + "-";
+                        txtCpfCnpj.SelectionStart = txtCpfCnpj.Text.Length + 1;
+                    }
+                    break;
+                case Campo.CEP:
+                    txtCep.MaxLength = 9;
+                    if (txtCpfCnpj.Text.Length == 5)
+                    {
+                        txtCpfCnpj.Text = txtCpfCnpj.Text + "-";
+                        txtCpfCnpj.SelectionStart = txtCpfCnpj.Text.Length + 1;
+                    }
+                    break;
+            }
+        }
+            public void limpaTela()
         {
             txtCodigo.Clear();
             txtNome.Clear();
@@ -164,6 +221,59 @@ namespace GUI
         {
             this.operacao = "alterar";
             this.alteraBotoes(2);
+        }
+
+        private void txtCep_Leave(object sender, EventArgs e)
+        {
+            //Valida CEP
+            if (Validacao.ValidaCep(txtCep.Text) == false)
+            {
+                MessageBox.Show("O CEP é inválido");
+                txtBairro.Clear();
+                txtEstado.Clear();
+                txtCidade.Clear();
+                txtEnd.Clear();
+            }
+            else
+            {
+                if (BuscaEndereco.verificaCEP(txtCep.Text) == true)
+                {
+                    txtBairro.Text = BuscaEndereco.bairro;
+                    txtEstado.Text = BuscaEndereco.estado;
+                    txtCidade.Text = BuscaEndereco.cidade;
+                    txtEnd.Text = BuscaEndereco.endereco;
+                }
+            }
+        }
+
+        private void txtCep_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar != (char)8)
+            {
+                Campo edit = Campo.CEP;
+                Formatar(edit, txtCep);
+            }
+        }
+
+        private void txtCpfCnpj_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar != (char)8)
+            {
+                Campo edit = Campo.CPF;
+                edit = Campo.CNPJ;
+                Formatar(edit, txtCpfCnpj);
+            }
+        }
+
+        private void txtCpfCnpj_Leave(object sender, EventArgs e)
+        {
+            lbValorIncorreto.Visible = false;
+            
+                if (Validacao.IsCnpj(txtCpfCnpj.Text) == false)
+                {
+                    lbValorIncorreto.Visible = true;
+                }
+            
         }
     }
 }

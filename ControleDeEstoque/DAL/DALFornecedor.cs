@@ -50,7 +50,7 @@ namespace DAL
             SqlCommand cmd = new SqlCommand();
             cmd.Connection = conexao.ObjetoConexao;
 
-            cmd.CommandText = "update cliente set for_nome = @for_nome, for_cnpj = @for_cnpj, for_ie = @for_ie, for_rsocial = @for_rsocial," +
+            cmd.CommandText = "update fornecedor set for_nome = @for_nome, for_cnpj = @for_cnpj, for_ie = @for_ie, for_rsocial = @for_rsocial," +
                 " for_cep = @for_cep, for_endereco = @for_endereco, for_endnumero  = @for_endnumero, for_bairro = @for_bairro, " +
                 " for_fone = @for_fone, for_cel = @for_cel, for_email = @for_email, for_cidade = @for_cidade, for_estado = @for_estado  where for_cod = @for_cod";
             cmd.Parameters.AddWithValue("@for_cod", modelo.ForCod);

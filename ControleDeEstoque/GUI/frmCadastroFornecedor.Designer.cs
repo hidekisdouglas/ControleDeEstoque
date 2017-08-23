@@ -268,6 +268,8 @@
             this.txtCep.Name = "txtCep";
             this.txtCep.Size = new System.Drawing.Size(60, 20);
             this.txtCep.TabIndex = 44;
+            this.txtCep.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCep_KeyPress);
+            this.txtCep.Leave += new System.EventHandler(this.txtCep_Leave);
             // 
             // label6
             // 
@@ -300,6 +302,8 @@
             this.txtCpfCnpj.Name = "txtCpfCnpj";
             this.txtCpfCnpj.Size = new System.Drawing.Size(357, 20);
             this.txtCpfCnpj.TabIndex = 40;
+            this.txtCpfCnpj.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCpfCnpj_KeyPress);
+            this.txtCpfCnpj.Leave += new System.EventHandler(this.txtCpfCnpj_Leave);
             // 
             // lbCnpj
             // 
